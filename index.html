@@ -1,2183 +1,1600 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Luxman Kumar — Cyber Security & AI Developer</title>
-
+    <title>Luxman Kumar — Software Developer | Full Stack Engineer (MERN) | AI & Robotics</title>
     <meta name="description"
-        content="Portfolio of Luxman Kumar — B.Tech CSE student specializing in Cyber Security and AI. Campus Ambassador, Full Stack Developer, and Innovation Leader.">
-
+        content="Resume & Portfolio of Luxman Kumar — Full Stack Developer (MERN), Python/Flask, Java, AI & Computer Vision Engineer, Robotics & Embedded Systems Specialist, and VAPT Intern. Mentored 2000+ learners and delivered 400+ technical projects.">
     <meta name="keywords"
-        content="Luxman Kumar, Cyber Security, AI Developer, Full Stack Developer, Portfolio, Punjab, India">
-
-    <meta property="og:title" content="Luxman Kumar — Cyber Security & AI Developer">
-
+        content="Luxman Kumar, Software Developer, Full Stack Engineer, MERN, AI, Robotics, Computer Vision, VAPT, Cyber Security, Punjab, Ludhiana, India">
+    <meta property="og:title" content="Luxman Kumar — Software Developer | Full Stack Engineer (MERN) | AI & Robotics">
     <meta property="og:description"
-        content="Premium portfolio of Luxman Kumar — Cyber Security Enthusiast, AI Developer, Campus Ambassador.">
-
+        content="Portfolio & interactive resume of Luxman Kumar — Full Stack Developer (MERN), AI & Robotics Engineer, and Tech Mentor.">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
-
-
 <body>
-
-    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ CURSOR Ã¢â€â‚¬Ã¢â€â‚¬ -->
-
+    <!-- CURSOR -->
     <div id="cursor" class="cursor"></div>
-
     <div id="cursor-follower" class="cursor-follower"></div>
 
-
-
-    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ LOADING SCREEN Ã¢â€â‚¬Ã¢â€â‚¬ -->
-
+    <!-- LOADING SCREEN -->
     <div id="loading-screen">
-
         <div class="loader-content">
-
             <div class="loader-logo">LK<span>.</span></div>
-
             <div class="loader-bar">
-
                 <div class="loader-fill"></div>
-
             </div>
-
-            <p class="loader-text">Initializing...</p>
-
+            <p class="loader-text">Loading Experience & Skills...</p>
         </div>
-
     </div>
 
-
-
-    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ SCROLL PROGRESS Ã¢â€â‚¬Ã¢â€â‚¬ -->
-
+    <!-- SCROLL PROGRESS -->
     <div id="scroll-bar"></div>
 
-
-
-    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ SCROLL TO TOP Ã¢â€â‚¬Ã¢â€â‚¬ -->
-
+    <!-- SCROLL TO TOP -->
     <button id="scroll-to-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
 
-
-
-    <!-- Ã¢â€â‚¬Ã¢â€â‚¬ NAVIGATION Ã¢â€â‚¬Ã¢â€â‚¬ -->
-
+    <!-- NAVIGATION -->
     <nav class="nav-bar" id="main-nav">
-
         <a href="#hero" class="nav-brand">LK<span>.</span></a>
-
         <ul class="nav-links" id="nav-links">
-
             <li><a href="#about" data-section="about">About</a></li>
-
             <li><a href="#skills" data-section="skills">Skills</a></li>
-
             <li><a href="#projects" data-section="projects">Projects</a></li>
-
             <li><a href="#experience" data-section="experience">Experience</a></li>
-
+            <li><a href="#education" data-section="education">Education</a></li>
+            <li><a href="#certificates" data-section="certificates">Certificates</a></li>
             <li><a href="#github" data-section="github">GitHub</a></li>
-
             <li><a href="#contact" data-section="contact">Contact</a></li>
-
-            <li><a href="luxman2.0.pdf" download class="nav-resume">Resume <i class="bi bi-download"></i></a></li>
-
+            <li><a href="#" class="btn-view-resume nav-resume" style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--primary);"><i class="bi bi-eye"></i> View Resume</a></li>
+            <li><a href="luxman2.0.pdf" download class="nav-resume"><i class="bi bi-download"></i> PDF</a></li>
         </ul>
-
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-
             <span></span><span></span><span></span>
-
         </button>
-
     </nav>
 
-
-
-
+    <!-- HERO SECTION -->
     <section id="hero">
-
-        <!-- Particle Canvas -->
-
+        <canvas id="webgl-canvas"></canvas>
         <canvas id="particle-canvas"></canvas>
-
-
-
-        <!-- Network lines background -->
-
         <canvas id="network-canvas"></canvas>
 
-
-
         <div class="hero-inner">
-
-            <!-- LEFT: Profile Image -->
-
+            <!-- LEFT: Profile Image & 3D Badges -->
             <div class="hero-image-side" id="hero-img-wrap">
+                <div class="floating-badge-3d fb-3d-1">
+                    <i class="bi bi-robot"></i> <span>AI & Robotics</span>
+                </div>
+                <div class="floating-badge-3d fb-3d-2">
+                    <i class="bi bi-layers-fill"></i> <span>MERN Stack</span>
+                </div>
+                <div class="floating-badge-3d fb-3d-3">
+                    <i class="bi bi-shield-check"></i> <span>VAPT & Security</span>
+                </div>
 
                 <div class="hero-rings">
-
                     <div class="ring ring-1"></div>
-
                     <div class="ring ring-2"></div>
-
                     <div class="ring ring-3"></div>
-
                 </div>
-
                 <div class="hero-img-container" id="hero-img-tilt">
-
                     <img src="my photo.png" alt="Luxman Kumar" class="hero-profile-img" id="hero-photo">
-
                     <div class="hero-img-glow"></div>
-
                     <div class="hero-img-badge">
-
-                        <i class="bi bi-shield-check"></i>
-
-                        <span>CSE · Cyber Security</span>
-
+                        <i class="bi bi-code-slash"></i>
+                        <span>Full Stack · AI & Robotics</span>
                     </div>
-
                 </div>
-
             </div>
-
-
 
             <!-- RIGHT: Text Content -->
-
             <div class="hero-text-side">
-
                 <p class="hero-eyebrow">
-
                     <span class="eyebrow-dot"></span>
-
-                    Available for Opportunities · Ludhiana, Punjab
-
+                    Available for Opportunities · Ludhiana, India
                 </p>
-
                 <h1 class="hero-name">
-
                     <span class="name-line">Luxman</span>
-
                     <span class="name-line accent-name">Kumar</span>
-
                 </h1>
-
                 <div class="hero-typewriter">
-
                     <span class="type-prefix">// </span>
-
                     <span class="typed-text" id="typed-text"></span>
-
                     <span class="type-cursor">|</span>
-
                 </div>
-
                 <p class="hero-bio">
-
-                    B.Tech CSE student at Desh Bhagat University, specializing in
-
-                    <strong>Cyber Forensics & AI</strong>. Building systems at the intersection
-
-                    of digital intelligence and physical automation.
-
+                    <strong>Software Developer & Full Stack Engineer (MERN)</strong> with 1.5+ years of applied engineering in AI, computer vision, and embedded systems. Proven track record of mentoring <strong>2000+ learners</strong> and delivering <strong>400+ hands-on technical projects</strong>.
                 </p>
-
                 <div class="hero-cta-group">
-
-                    <a href="luxman2.0.pdf" download class="btn-neon" id="btn-resume">
-
-                        <i class="bi bi-download"></i> Download Resume
-
+                    <a href="#" class="btn-neon btn-view-resume" id="btn-view-resume">
+                        <i class="bi bi-file-earmark-person"></i> View Resume
                     </a>
-
+                    <a href="luxman2.0.pdf" download class="btn-glass" id="btn-resume">
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
                     <a href="#contact" class="btn-glass" id="btn-contact">
-
                         <i class="bi bi-send"></i> Get In Touch
-
                     </a>
-
                 </div>
-
                 <div class="hero-social-bar">
-
-                    <a href="https://github.com/mraadrsh45" target="_blank" rel="noopener" class="social-pill"
-                        id="hero-github">
-
+                    <a href="https://github.com/mraadrsh45" target="_blank" rel="noopener" class="social-pill" id="hero-github">
                         <i class="bi bi-github"></i> GitHub
-
                     </a>
-
-                    <a href="https://linkedin.com/in/luxman-kumar" target="_blank" rel="noopener" class="social-pill"
-                        id="hero-linkedin">
-
+                    <a href="https://linkedin.com/in/luxman-kumar" target="_blank" rel="noopener" class="social-pill" id="hero-linkedin">
                         <i class="bi bi-linkedin"></i> LinkedIn
-
                     </a>
-
                     <a href="mailto:luxmankumar628@gmail.com" class="social-pill" id="hero-email">
-
                         <i class="bi bi-envelope"></i> Email
-
                     </a>
-
                     <a href="tel:+919780387265" class="social-pill" id="hero-phone">
-
-                        <i class="bi bi-telephone"></i> Call
-
+                        <i class="bi bi-telephone"></i> +91 9780387265
                     </a>
-
                 </div>
-
             </div>
-
         </div>
-
-
-
-        <!-- Scroll Indicator -->
 
         <div class="hero-scroll-indicator">
-
             <div class="scroll-mouse">
-
                 <div class="scroll-wheel"></div>
-
             </div>
-
             <span>Scroll to explore</span>
-
         </div>
-
     </section>
 
-
-
+    <!-- COUNTERS SECTION -->
     <section id="counters">
-
         <div class="counters-wrap">
-
             <div class="counter-item reveal">
-
-                <span class="counter-num" data-target="15">0</span><span class="counter-plus">+</span>
-
-                <p class="counter-label">Projects Completed</p>
-
+                <span class="counter-num" data-target="400">0</span><span class="counter-plus">+</span>
+                <p class="counter-label">Projects Delivered</p>
             </div>
-
             <div class="counter-item reveal">
-
-                <span class="counter-num" data-target="25">0</span><span class="counter-plus">+</span>
-
-                <p class="counter-label">Certificates Earned</p>
-
+                <span class="counter-num" data-target="2000">0</span><span class="counter-plus">+</span>
+                <p class="counter-label">Learners Mentored</p>
             </div>
-
             <div class="counter-item reveal">
-
-                <span class="counter-num" data-target="10">0</span><span class="counter-plus">+</span>
-
-                <p class="counter-label">Events Organized</p>
-
+                <span class="counter-num" data-target="8">0</span><span class="counter-plus">+</span>
+                <p class="counter-label">Roles & Internships</p>
             </div>
-
             <div class="counter-item reveal">
-
-                <span class="counter-num" data-target="200">0</span><span class="counter-plus">+</span>
-
-                <p class="counter-label">Students Mentored</p>
-
+                <span class="counter-num" data-target="9">0</span><span class="counter-plus">+</span>
+                <p class="counter-label">Certifications</p>
             </div>
-
             <div class="counter-item reveal">
-
-                <span class="counter-num" data-target="3">0</span><span class="counter-plus">+</span>
-
-                <p class="counter-label">Internships Completed</p>
-
+                <span class="counter-num" data-target="5">0</span><span class="counter-plus">+</span>
+                <p class="counter-label">Hackathons Won/Placed</p>
             </div>
-
         </div>
-
     </section>
 
-
-
+    <!-- ABOUT SECTION -->
     <section id="about">
-
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">001 — About Me</p>
-
-                <h2 class="section-title">The builder <em>behind the code.</em></h2>
-
+                <p class="section-tag">001 — Executive Summary</p>
+                <h2 class="section-title">Engineering at the edge of <em>software & hardware.</em></h2>
             </div>
-
             <div class="about-grid">
-
                 <div class="about-text reveal">
-
-                    <p>I am a Computer Science Engineering student specialising in <strong>Cyber Forensics &
-
-                            Cybersecurity</strong> at Desh Bhagat University, Punjab. I build at the intersection of
-
-                        digital intelligence and physical automation — from vulnerability scanners to autonomous
-                        grocery
-
-                        robots.</p>
-
-                    <p>My approach is problem-first: I dissect a challenge, design a solution architecture, then
-
-                        engineer it with a focus on performance, reliability, and security. I hold roles across
-
-                        cybersecurity research, AI-driven robotics, and student innovation leadership.</p>
-
-                    <p>When not writing code, I'm instructing the next generation of robotics engineers or mentoring
-
-                        student entrepreneurs through Innovation Mission Punjab.</p>
-
+                    <p>Software Developer with full-stack development experience across the <strong>MERN stack, Python/Flask, and Java</strong>, combined with <strong>1.5+ years of applied engineering</strong> in AI, computer vision, and embedded systems.</p>
+                    <p>I design and ship full-stack web applications featuring <strong>REST APIs, JWT authentication, third-party AI/security API integrations</strong>, and database-backed dashboards, alongside containerized and cloud-deployable services.</p>
+                    <p>Strong foundation in <strong>data structures, systems programming, and problem solving</strong>, built through robotics and automation engineering, plus a proven track record of mentoring <strong>2,000+ learners</strong> and delivering <strong>400+ hands-on technical projects</strong>.</p>
                     <div class="about-tags">
-
-                        <span class="tag"><i class="bi bi-geo-alt"></i> Ludhiana, Punjab</span>
-
-                        <span class="tag"><i class="bi bi-mortarboard"></i> B.Tech CSE 2023—œ2027</span>
-
-                        <span class="tag"><i class="bi bi-shield-check"></i> Cyber Security Specialist</span>
-
-                        <span class="tag"><i class="bi bi-robot"></i> AI/Robotics Engineer</span>
-
+                        <span class="tag"><i class="bi bi-geo-alt"></i> Ludhiana, India</span>
+                        <span class="tag"><i class="bi bi-mortarboard"></i> B.Tech CSE (Cyber Forensics & Security) 2023–2027</span>
+                        <span class="tag"><i class="bi bi-layers"></i> Full Stack Engineer (MERN)</span>
+                        <span class="tag"><i class="bi bi-robot"></i> AI & Robotics Engineer</span>
                     </div>
-
                 </div>
-
                 <div class="about-visual reveal">
-
                     <div class="terminal-card">
-
                         <div class="terminal-header">
-
                             <div class="term-dot red"></div>
-
                             <div class="term-dot yellow"></div>
-
                             <div class="term-dot green"></div>
-
                             <span class="term-title">luxmankumar628@gmail.com:~</span>
-
                         </div>
-
                         <div class="terminal-body">
-
                             <div class="term-line"><span class="term-prompt">$</span> whoami</div>
-
-                            <div class="term-output">Luxman Kumar — CSE Student</div>
-
+                            <div class="term-output">Luxman Kumar — Software Developer & AI/Robotics Engineer</div>
                             <div class="term-line"><span class="term-prompt">$</span> cat specialization.txt</div>
-
-                            <div class="term-output">Cyber Security + AI + Full Stack</div>
-
+                            <div class="term-output">MERN Stack · Python/Flask/Java · AI & CV · Embedded Systems · VAPT</div>
                             <div class="term-line"><span class="term-prompt">$</span> ls experience/</div>
-
-                            <div class="term-output">internships/ leadership/ certifications/</div>
-
+                            <div class="term-output">vapt-intern/ fullstack-dev/ robotics-trainer/ ai-robotics/ iic-convenor/</div>
+                            <div class="term-line"><span class="term-prompt">$</span> echo $MENTORSHIP_STATS</div>
+                            <div class="term-output accent-green">2,000+ Students Mentored · 400+ Technical Projects</div>
                             <div class="term-line"><span class="term-prompt">$</span> echo $STATUS</div>
-
-                            <div class="term-output accent-green">Available for Work ✓</div>
-
-                            <div class="term-line"><span class="term-prompt">$</span> <span
-                                    class="blink-cursor">_</span></div>
-
+                            <div class="term-output accent-green">Open for Opportunities & Collaborations ✓</div>
+                            <div class="term-line"><span class="term-prompt">$</span> <span class="blink-cursor">_</span></div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-
+    <!-- SKILLS ARSENAL -->
     <section id="skills">
-
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">002 &mdash; Skills Arsenal</p>
-
-                <h2 class="section-title">Technologies I <em>master.</em></h2>
-
+                <p class="section-tag">002 — Technical Skills</p>
+                <h2 class="section-title">Comprehensive <em>skills arsenal.</em></h2>
             </div>
 
-            <div class="skills-grid">
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                            alt="Python"></div><span class="skill-name">Python</span>
+            <div class="skills-category-grid reveal">
+                <!-- Category 1: Languages -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-code-square"></i></div>
+                        <h3 class="skill-cat-title">Programming Languages</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"> C/C++</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"> JavaScript</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"> Kotlin</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
-                    </div><span class="skill-name">Java</span>
+                <!-- Category 2: Frontend -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-browser-chrome"></i></div>
+                        <h3 class="skill-cat-title">Frontend Development</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React.js</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"> HTML5</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"> CSS3</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"> Tailwind CSS</span>
+                        <span class="skill-pill"><i class="bi bi-aspect-ratio text-primary"></i> Responsive UI Design</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                            alt="C++"></div><span class="skill-name">C++</span>
+                <!-- Category 3: Backend -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-hdd-network"></i></div>
+                        <h3 class="skill-cat-title">Backend Development</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" class="wall-invert"> Express.js</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="wall-invert"> Flask</span>
+                        <span class="skill-pill"><i class="bi bi-arrow-left-right text-primary"></i> REST API Design</span>
+                        <span class="skill-pill"><i class="bi bi-key-fill text-primary"></i> JWT Authentication</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                            alt="JavaScript"></div><span class="skill-name">JavaScript</span>
+                <!-- Category 4: Databases -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-database"></i></div>
+                        <h3 class="skill-cat-title">Databases</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"> MySQL</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL (Supabase)</span>
+                        <span class="skill-pill"><i class="bi bi-cloud-check text-primary"></i> NeonDB</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"> SQLite</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"> Firebase</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                            alt="React"></div><span class="skill-name">React</span>
+                <!-- Category 5: Tools & DevOps -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-tools"></i></div>
+                        <h3 class="skill-cat-title">Tools & DevOps</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"> Git</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="wall-invert"> GitHub</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker & Docker Compose</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"> VS Code</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA"> IntelliJ IDEA</span>
+                        <span class="skill-pill"><i class="bi bi-send-check text-primary"></i> Postman-style API Testing</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                            alt="Node.js"></div><span class="skill-name">Node.js</span>
+                <!-- Category 6: AI & Integrations -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-cpu"></i></div>
+                        <h3 class="skill-cat-title">AI & Integrations</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="bi bi-stars text-primary"></i> OpenAI API</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"> Computer Vision (OpenCV)</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"> Azure Cognitive Services</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"> AI & ML Models</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                            alt="Firebase"></div><span class="skill-name">Firebase</span>
+                <!-- Category 7: Robotics & Embedded -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-robot"></i></div>
+                        <h3 class="skill-cat-title">Robotics & Embedded Systems</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"> Arduino UNO/Mega</span>
+                        <span class="skill-pill"><i class="bi bi-cpu-fill text-primary"></i> ESP32 / ESP8266</span>
+                        <span class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi"> Raspberry Pi</span>
+                        <span class="skill-pill"><i class="bi bi-wifi text-primary"></i> IoT Sensors & Actuators</span>
+                        <span class="skill-pill"><i class="bi bi-box text-primary"></i> 3D Printing & Rapid Prototyping</span>
+                        <span class="skill-pill"><i class="bi bi-vector-pen text-primary"></i> Fusion 360 & SolidWorks</span>
+                    </div>
                 </div>
 
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                            alt="MongoDB"></div><span class="skill-name">MongoDB</span>
+                <!-- Category 8: Professional Skills -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon"><i class="bi bi-award"></i></div>
+                        <h3 class="skill-cat-title">Professional & Leadership</h3>
+                    </div>
+                    <div class="skill-pill-list">
+                        <span class="skill-pill"><i class="bi bi-person-video3 text-primary"></i> Technical Training</span>
+                        <span class="skill-pill"><i class="bi bi-people text-primary"></i> Student Mentoring (2000+)</span>
+                        <span class="skill-pill"><i class="bi bi-easel text-primary"></i> Workshop Delivery</span>
+                        <span class="skill-pill"><i class="bi bi-diagram-3 text-primary"></i> Leadership & Team Management</span>
+                        <span class="skill-pill"><i class="bi bi-file-text text-primary"></i> Technical Documentation</span>
+                        <span class="skill-pill"><i class="bi bi-patch-check text-primary"></i> Problem Solving</span>
+                    </div>
                 </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-                            alt="Arduino"></div><span class="skill-name">Arduino</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                            alt="TensorFlow"></div><span class="skill-name">AI / ML</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                            alt="NumPy"></div><span class="skill-name">Data Science</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                            alt="GitHub"></div><span class="skill-name">GitHub</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                            alt="Linux"></div><span class="skill-name">Linux</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
-                            alt="Flask"></div><span class="skill-name">Flask</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI">
-                    </div><span class="skill-name">Power BI</span>
-                </div>
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon"><img src="https://img.icons8.com/color/96/cybersecurity.png"
-                            alt="Cyber Security"></div><span class="skill-name">Cyber Security</span>
-                </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-
+    <!-- TECH WALL INFINITE MARQUEE -->
     <section id="tech-wall">
-
         <div class="tech-track-wrap">
-
             <div class="tech-track" id="tech-track-1">
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="Python"> Python</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java
-                </div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-                    React</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                        alt="Firebase"> Firebase</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
-                        class="wall-invert"> GitHub</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-                    Linux</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-                        alt="Arduino"> Arduino</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                        alt="AI/ML"> AI / ML</div>
-
-                <div class="tech-item"><img src="https://img.icons8.com/color/48/cybersecurity.png"
-                        alt="Cyber Security"> Cyber Security</div>
-
-                <div class="tech-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"> Power BI
-                </div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                        alt="MongoDB"> MongoDB</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"
-                        class="wall-invert"> Flask</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                        alt="JavaScript"> JavaScript</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                        alt="Node.js"> Node.js</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                        alt="C++"> C++</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React.js</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="wall-invert"> Flask</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"> OpenCV</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"> Arduino</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"> Tailwind CSS</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"> Firebase</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"> C++</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"> Kotlin</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="wall-invert"> GitHub</div>
 
                 <!-- Duplicated for seamless loop -->
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                        alt="Python"> Python</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java
-                </div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-                    React</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                        alt="Firebase"> Firebase</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
-                        class="wall-invert"> GitHub</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-                    Linux</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-                        alt="Arduino"> Arduino</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                        alt="AI/ML"> AI / ML</div>
-
-                <div class="tech-item"><img src="https://img.icons8.com/color/48/cybersecurity.png"
-                        alt="Cyber Security"> Cyber Security</div>
-
-                <div class="tech-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"> Power BI
-                </div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                        alt="MongoDB"> MongoDB</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"
-                        class="wall-invert"> Flask</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                        alt="JavaScript"> JavaScript</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                        alt="Node.js"> Node.js</div>
-
-                <div class="tech-item"><img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                        alt="C++"> C++</div>
-
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"> React.js</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"> Node.js</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"> MongoDB</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"> Java</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"> Docker</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="wall-invert"> Flask</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"> OpenCV</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"> Arduino</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"> Tailwind CSS</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"> PostgreSQL</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"> Firebase</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"> C++</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"> Kotlin</div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="wall-invert"> GitHub</div>
             </div>
-
         </div>
-
     </section>
 
-
-
-
-
+    <!-- PROJECTS SECTION -->
     <section id="projects">
-
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">003 — Selected Work</p>
-
-                <h2 class="section-title">Projects that <em>matter.</em></h2>
-
+                <p class="section-tag">003 — Featured Portfolio</p>
+                <h2 class="section-title">Software & Robotics <em>Projects.</em></h2>
             </div>
 
-
+            <!-- Project Filter Controls -->
+            <div class="proj-filter reveal">
+                <button class="proj-btn active" data-filter="all">All Projects</button>
+                <button class="proj-btn" data-filter="software">Full Stack & Web</button>
+                <button class="proj-btn" data-filter="systems">AI & Cloud Systems</button>
+                <button class="proj-btn" data-filter="robotics">Robotics & IoT</button>
+            </div>
 
             <div class="projects-grid">
-
-                <!-- Project 1: AI Grocery Robot (Featured) -->
-
-                <div class="proj-card featured reveal" id="proj-1">
-
+                <!-- Project 1: FitZone AI (Featured MERN) -->
+                <div class="proj-card featured reveal" id="proj-fitzone" data-cat="software systems">
                     <div class="proj-card-inner">
-
                         <div class="proj-header">
-
                             <div class="proj-tags">
-
                                 <span class="proj-badge featured-badge">Featured</span>
-
-                                <span class="proj-badge">AI · Robotics</span>
-
+                                <span class="proj-badge">Full Stack · MERN · AI</span>
                             </div>
-
                             <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank" title="GitHub"><i
-                                        class="bi bi-github"></i></a>
-
-                                <a href="#" title="Live Demo"><i class="bi bi-box-arrow-up-right"></i></a>
-
+                                <a href="https://github.com/mraadrsh45/Fitzone" target="_blank" rel="noopener" title="GitHub Repository"><i class="bi bi-github"></i></a>
                             </div>
-
                         </div>
-
                         <div class="proj-visual">
-
-                            <div class="proj-rich-visual robot-visual">
-
-                                <div class="pv-header">
-
-                                    <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">autonomous_robot.cpp</span>
-
-                                    <span class="pv-status active">● LIVE</span>
-
-                                </div>
-
-                                <div class="pv-body">
-
-                                    <div class="pv-logos">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                                alt="C++">
-
-                                            <span>C++</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-                                                alt="Arduino">
-
-                                            <span>Arduino</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
-                                                alt="OpenCV">
-
-                                            <span>OpenCV</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                                alt="Python">
-
-                                            <span>Python</span>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="pv-terminal">
-
-                                        <div class="pt-line"><span class="pt-c">▶</span> Scanning barcode...</div>
-
-                                        <div class="pt-line"><span class="pt-g">✓</span> Item: "Milk 1L" found</div>
-
-                                        <div class="pt-line"><span class="pt-c">▶</span> A* pathfinding to aisle 3...
-                                        </div>
-
-                                        <div class="pt-line"><span class="pt-g">✓</span> No collision detected</div>
-
-                                        <div class="pt-line pt-blink"><span class="pt-c">▶</span> Delivering item...
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="proj-content">
-
-                            <h3 class="proj-title">AI Grocery Picking Robot</h3>
-
-                            <p class="proj-desc">A physical robotic unit for retail environments, using OpenCV barcode
-                                scanning and A* pathfinding to autonomously retrieve items with zero collision across
-                                all test runs.</p>
-
-                            <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                    alt="C++" title="C++">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
-                                    alt="OpenCV" title="OpenCV">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
-                                    alt="Arduino" title="Arduino">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python" title="Python">
-
-                                <span>A* Algorithm</span>
-
-                                <span>Computer Vision</span>
-
-                            </div>
-
-                            <div class="proj-stats">
-
-                                <div class="proj-stat"><strong>0</strong><span>Collisions</span></div>
-
-                                <div class="proj-stat"><strong>98%</strong><span>Accuracy</span></div>
-
-                                <div class="proj-stat"><strong>Real-time</strong><span>Detection</span></div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Project 2: FitZone AI -->
-
-                <div class="proj-card reveal" id="proj-2">
-
-                    <div class="proj-card-inner">
-
-                        <div class="proj-header">
-
-                            <div class="proj-tags"><span class="proj-badge">AI · Health</span></div>
-
-                            <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="proj-visual compact">
-
                             <div class="proj-rich-visual fitzone-visual">
-
                                 <div class="pv-header">
-
                                     <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">FitZone AI</span>
-
+                                    <span class="pv-title">fitzone-ai-backend.js</span>
                                     <span class="pv-status active">● RUNNING</span>
-
                                 </div>
-
-                                <div class="pv-body pv-body-sm">
-
-                                    <div class="pv-logos pv-logos-sm">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                                alt="Python">
-
-                                            <span>Python</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                                                alt="TensorFlow">
-
-                                            <span>TensorFlow</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                                                alt="React">
-
-                                            <span>React</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                                                alt="Firebase">
-
-                                            <span>Firebase</span>
-
-                                        </div>
-
+                                <div class="pv-body">
+                                    <div class="pv-logos">
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind</span></div>
                                     </div>
-
+                                    <div class="pv-terminal">
+                                        <div class="pt-line"><span class="pt-c">▶</span> JWT Auth initialized: Bearer Token Verified</div>
+                                        <div class="pt-line"><span class="pt-g">✓</span> OpenAI API: Marketing copy & SEO keywords generated</div>
+                                        <div class="pt-line"><span class="pt-c">▶</span> Chart.js Dashboard: Real-time lead visualization active</div>
+                                        <div class="pt-line pt-blink"><span class="pt-g">✓</span> REST API Status: 200 OK (MongoDB connected)</div>
+                                    </div>
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="proj-content">
-
-                            <h3 class="proj-title">FitZone AI</h3>
-
-                            <p class="proj-desc">AI-powered fitness app with computer vision workout tracking,
-                                personalized training plans, and real-time form correction using pose estimation.</p>
-
+                            <h3 class="proj-title">FitZone AI — Gym Marketing & Lead Generation Platform</h3>
+                            <p class="proj-desc">Full-stack MERN application for AI-powered gym digital marketing automation with lead capture and management. Built JWT-authenticated REST APIs with Node.js/Express, integrated OpenAI API for automated ad copy/SEO generation, and implemented interactive Chart.js analytics dashboards.</p>
                             <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python" title="Python">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                                    alt="TensorFlow" title="TensorFlow">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                                    alt="React" title="React">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                                    alt="Firebase" title="Firebase">
-
-                                <span>MediaPipe</span>
-
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" title="Tailwind CSS">
+                                <span>OpenAI API</span>
+                                <span>Chart.js</span>
+                                <span>JWT</span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-
-                <!-- Project 3: CloudVMX -->
-
-                <div class="proj-card reveal" id="proj-3">
-
+                <!-- Project 2: CloudVMX -->
+                <div class="proj-card reveal" id="proj-cloudvmx" data-cat="software systems">
                     <div class="proj-card-inner">
-
                         <div class="proj-header">
-
-                            <div class="proj-tags"><span class="proj-badge">Security · Cloud</span></div>
-
+                            <div class="proj-tags"><span class="proj-badge">Cloud · Virtualization · Docker</span></div>
                             <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
+                                <a href="https://github.com/mraadrsh45/CloudVMX" target="_blank" rel="noopener" title="GitHub Repository"><i class="bi bi-github"></i></a>
                             </div>
-
                         </div>
-
                         <div class="proj-visual compact">
-
                             <div class="proj-rich-visual cloud-visual">
-
                                 <div class="pv-header">
-
                                     <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">CloudVMX</span>
-
+                                    <span class="pv-title">CloudVMX Docker Cluster</span>
                                     <span class="pv-status active">● ONLINE</span>
-
                                 </div>
-
                                 <div class="pv-body pv-body-sm">
-
                                     <div class="pv-logos pv-logos-sm">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                                                alt="Node.js">
-
-                                            <span>Node.js</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                                alt="JavaScript">
-
-                                            <span>JavaScript</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                                alt="Linux">
-
-                                            <span>Linux</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://img.icons8.com/color/48/cloud.png" alt="Cloud">
-
-                                            <span>Cloud</span>
-
-                                        </div>
-
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><span>Docker</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"><span>Linux</span></div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="proj-content">
-
-                            <h3 class="proj-title">CloudVMX</h3>
-
-                            <p class="proj-desc">Browser-based cloud virtualization platform enabling simultaneous
-                                multi-OS sandboxing. Zero-install OS sandbox streamed to any browser client.</p>
-
+                            <h3 class="proj-title">CloudVMX — Containerized Cloud Virtual Machine Platform</h3>
+                            <p class="proj-desc">Cloud virtual machine platform with a Dockerized client/backend architecture supporting Windows, Android, and Kali environments. Automated build and deployment scripts with Docker Compose and PowerShell/Shell.</p>
                             <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" title="Node.js">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" title="JavaScript">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                    alt="Linux" title="Linux">
-
-                                <span>WebSockets</span><span>Cloud</span>
-
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker">
+                                <span>Docker Compose</span>
+                                <span>Shell/PowerShell</span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-
-                <!-- Project 4: FraudGuard AI -->
-
-                <div class="proj-card reveal" id="proj-4">
-
+                <!-- Project 3: Grocery Inventory & Barcode Scanner -->
+                <div class="proj-card reveal" id="proj-barcode" data-cat="software systems">
                     <div class="proj-card-inner">
-
                         <div class="proj-header">
-
-                            <div class="proj-tags"><span class="proj-badge">AI · Security</span></div>
-
+                            <div class="proj-tags"><span class="proj-badge">Python · Flask · Computer Vision</span></div>
                             <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
+                                <a href="https://github.com/mraadrsh45/fully-automatic-Barcode-scanner-for-robot" target="_blank" rel="noopener" title="GitHub Repository"><i class="bi bi-github"></i></a>
                             </div>
-
                         </div>
-
                         <div class="proj-visual compact">
-
-                            <div class="proj-rich-visual fraud-visual">
-
+                            <div class="proj-rich-visual robot-visual">
                                 <div class="pv-header">
-
                                     <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">FraudGuard AI</span>
-
-                                    <span class="pv-status safe">● SAFE</span>
-
+                                    <span class="pv-title">barcode_inventory.py</span>
+                                    <span class="pv-status active">● SCANNING</span>
                                 </div>
-
                                 <div class="pv-body pv-body-sm">
-
                                     <div class="pv-logos pv-logos-sm">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                                alt="Python">
-
-                                            <span>Python</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                                                alt="ML">
-
-                                            <span>TensorFlow</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                                                alt="NumPy">
-
-                                            <span>NumPy</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://img.icons8.com/color/48/cybersecurity.png" alt="Security">
-
-                                            <span>Security</span>
-
-                                        </div>
-
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="wall-invert"><span>Flask</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"><span>OpenCV</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite"><span>SQLite</span></div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="proj-content">
-
-                            <h3 class="proj-title">FraudGuard AI</h3>
-
-                            <p class="proj-desc">AI-powered threat intelligence scanner monitoring transaction packets
-                                in real time. ML anomaly classifiers isolate evasive fraud patterns with &lt;0.4%
-                                false-positive rate.</p>
-
+                            <h3 class="proj-title">Grocery Inventory & Barcode Scanning Web App</h3>
+                            <p class="proj-desc">Flask web application for real-time barcode scanning via webcam with SQLite-backed inventory management. Implemented REST endpoints for product lookup, label printing, and inventory statistics using OpenCV and pyzbar.</p>
                             <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python" title="Python">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                                    alt="TensorFlow" title="TensorFlow">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                                    alt="NumPy" title="NumPy">
-
-                                <span>Anomaly Detection</span>
-
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" title="Flask">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV">
+                                <span>pyzbar</span>
+                                <span>SQLAlchemy</span>
+                                <span>SQLite</span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-
-                <!-- Project 5: Cyber Security Toolkit -->
-
-                <div class="proj-card reveal" id="proj-5">
-
+                <!-- Project 4: AI-Security Finance Manager -->
+                <div class="proj-card reveal" id="proj-finance" data-cat="software systems">
                     <div class="proj-card-inner">
-
                         <div class="proj-header">
-
-                            <div class="proj-tags"><span class="proj-badge">Cyber Security</span></div>
-
+                            <div class="proj-tags"><span class="proj-badge">Security · AI · Node.js</span></div>
                             <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
+                                <a href="https://github.com/adi4sure/AI-Security-Finance" target="_blank" rel="noopener" title="GitHub Repository"><i class="bi bi-github"></i></a>
                             </div>
-
                         </div>
-
                         <div class="proj-visual compact">
-
                             <div class="proj-rich-visual security-visual">
-
                                 <div class="pv-header">
-
                                     <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">security_toolkit.py</span>
-
+                                    <span class="pv-title">ai_threat_finance.js</span>
                                     <span class="pv-status safe">● SECURE</span>
-
                                 </div>
-
                                 <div class="pv-body pv-body-sm">
-
                                     <div class="pv-logos pv-logos-sm">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                                alt="Python">
-
-                                            <span>Python</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                                alt="Linux">
-
-                                            <span>Linux</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://img.icons8.com/color/48/cybersecurity.png" alt="Security">
-
-                                            <span>Pentest</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
-                                                alt="Bash">
-
-                                            <span>Bash</span>
-
-                                        </div>
-
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="proj-content">
-
-                            <h3 class="proj-title">Cyber Security Toolkit</h3>
-
-                            <p class="proj-desc">Collection of custom security tools including vulnerability scanners,
-                                network analyzers, and forensic utilities built during internship and research.</p>
-
+                            <h3 class="proj-title">AI-Security Finance Manager</h3>
+                            <p class="proj-desc">Personal finance dashboard for expense tracking and financial health visualization. Integrated the VirusTotal API for system file threat scanning and an Nmap-based pattern-matching module for security alerts.</p>
                             <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python" title="Python">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                    alt="Linux" title="Linux">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
-                                    alt="Bash" title="Bash">
-
-                                <span>Nmap</span><span>Forensics</span>
-
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+                                <span>VirusTotal API</span>
+                                <span>Nmap Module</span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-
-                <!-- Project 6: Romora -->
-
-                <div class="proj-card reveal" id="proj-6">
-
+                <!-- Project 5: Roomora Property Listing -->
+                <div class="proj-card reveal" id="proj-roomora" data-cat="software">
                     <div class="proj-card-inner">
-
                         <div class="proj-header">
-
-                            <div class="proj-tags"><span class="proj-badge">Systems</span></div>
-
+                            <div class="proj-tags"><span class="proj-badge">React · Web UI · Responsive</span></div>
                             <div class="proj-links">
-
-                                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
+                                <a href="https://github.com/mraadrsh45/Roomora-website" target="_blank" rel="noopener" title="GitHub Repository"><i class="bi bi-github"></i></a>
                             </div>
-
                         </div>
-
                         <div class="proj-visual compact">
-
                             <div class="proj-rich-visual romora-visual">
-
                                 <div class="pv-header">
-
                                     <div class="pv-dots"><span></span><span></span><span></span></div>
-
-                                    <span class="pv-title">Romora v1.0</span>
-
-                                    <span class="pv-status active"> BALANCED</span>
-
+                                    <span class="pv-title">Roomora App</span>
+                                    <span class="pv-status active">● RESPONSIVE</span>
                                 </div>
-
                                 <div class="pv-body pv-body-sm">
-
                                     <div class="pv-logos pv-logos-sm">
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                                alt="Python">
-
-                                            <span>Python</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                                                alt="NumPy">
-
-                                            <span>NumPy</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                                                alt="Linux">
-
-                                            <span>Linux</span>
-
-                                        </div>
-
-                                        <div class="pv-logo-item">
-
-                                            <img src="https://img.icons8.com/color/48/cpu.png" alt="CPU">
-
-                                            <span>Threading</span>
-
-                                        </div>
-
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"><span>JS</span></div>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                         <div class="proj-content">
-
-                            <h3 class="proj-title">Romora</h3>
-
-                            <p class="proj-desc">Python-based resource management framework featuring asymmetric task
-                                scheduling to dynamically balance CPU thread loads and reduce processor spikes by 22%.
-                            </p>
-
+                            <h3 class="proj-title">Roomora — Property Listing Website</h3>
+                            <p class="proj-desc">Modern, responsive front-end property listing website featuring dynamic filtering, smooth search experiences, and a mobile-first UI architecture.</p>
                             <div class="proj-stack">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                                    alt="Python" title="Python">
-
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                                    alt="NumPy" title="NumPy">
-
-                                <span>Multithreading</span><span>Performance</span>
-
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
                             </div>
-
                         </div>
-
                     </div>
+                </div>
 
-                </div><!-- /proj-6 -->
+                <!-- Project 6: Autonomous Grocery Picking Robot -->
+                <div class="proj-card reveal" id="proj-robot" data-cat="robotics systems">
+                    <div class="proj-card-inner">
+                        <div class="proj-header">
+                            <div class="proj-tags"><span class="proj-badge">Robotics · Computer Vision · Embedded</span></div>
+                        </div>
+                        <div class="proj-visual compact">
+                            <div class="proj-rich-visual robot-visual">
+                                <div class="pv-header">
+                                    <div class="pv-dots"><span></span><span></span><span></span></div>
+                                    <span class="pv-title">autonomous_robot_mega.ino</span>
+                                    <span class="pv-status active">● CALIBRATED</span>
+                                </div>
+                                <div class="pv-body pv-body-sm">
+                                    <div class="pv-logos pv-logos-sm">
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino"><span>Arduino</span></div>
+                                        <div class="pv-logo-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"><span>OpenCV</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-content">
+                            <h3 class="proj-title">AI-Powered Autonomous Grocery Picking Robot</h3>
+                            <p class="proj-desc">Autonomous grocery robot for smart retail automation with a conveyor-based mechanism replacing traditional arms. Built with 3D-printed parts, AI-based object/QR code recognition, and sensor-calibrated obstacle avoidance.</p>
+                            <div class="proj-stack">
+                                <span>Arduino Mega</span>
+                                <span>Computer Vision</span>
+                                <span>QR Scanner</span>
+                                <span>Conveyor Automation</span>
+                                <span>3D Printing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            </div><!-- /projects-grid -->
+                <!-- Project 7: Line Follower & RFID Lock -->
+                <div class="proj-card reveal" id="proj-embedded" data-cat="robotics">
+                    <div class="proj-card-inner">
+                        <div class="proj-header">
+                            <div class="proj-tags"><span class="proj-badge">Embedded · Arduino · Automation</span></div>
+                        </div>
+                        <div class="proj-content">
+                            <h3 class="proj-title">Smart Line Following Robot & RFID Door Lock</h3>
+                            <p class="proj-desc">Developed high-precision autonomous navigation robots using IR sensor arrays and smooth motor PWM control. Also engineered an Arduino RFID access control system with LCD displays and servo lock triggers.</p>
+                            <div class="proj-stack">
+                                <span>Arduino</span>
+                                <span>IR Arrays</span>
+                                <span>RFID RC522</span>
+                                <span>Servo Motors</span>
+                                <span>LCD Display</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div><!-- /section-wrap -->
-
+                <!-- Project 8: IoT Smart Automation Projects -->
+                <div class="proj-card reveal" id="proj-iot" data-cat="robotics">
+                    <div class="proj-card-inner">
+                        <div class="proj-header">
+                            <div class="proj-tags"><span class="proj-badge">IoT · Smart Cities · ESP32</span></div>
+                        </div>
+                        <div class="proj-content">
+                            <h3 class="proj-title">IoT Smart Automation Systems Suite</h3>
+                            <p class="proj-desc">Engineered smart systems suite including Smart Parking Systems, Smart Traffic Light Controllers, Home Automation, Ultrasonic Obstacle Detection Bots, and Environmental Monitoring Stations.</p>
+                            <div class="proj-stack">
+                                <span>Arduino / ESP32</span>
+                                <span>Sensors & Actuators</span>
+                                <span>IoT Protocols</span>
+                                <span>Telemetry</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-
-
-
+    <!-- EXPERIENCE SECTION -->
     <section id="experience">
-
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">004 — Experience</p>
-
-                <h2 class="section-title">Where I've <em>worked.</em></h2>
-
+                <p class="section-tag">004 — Professional Experience</p>
+                <h2 class="section-title">Where I've <em>built & led.</em></h2>
             </div>
-
             <div class="timeline-container">
-
                 <div class="timeline-line"></div>
 
-
-
-                <div class="timeline-item reveal" id="tl-1">
-
-                    <div class="tl-dot"><i class="bi bi-flag"></i></div>
-
+                <!-- Role 1: VAPT Intern -->
+                <div class="timeline-item reveal" id="tl-vapt">
+                    <div class="tl-dot"><i class="bi bi-shield-lock-fill"></i></div>
                     <div class="tl-content">
-
                         <div class="tl-header">
-
                             <div>
-
-                                <h3 class="tl-title">Campus Ambassador</h3>
-
-                                <p class="tl-org">Innovation Mission Punjab · Mohali, India</p>
-
+                                <h3 class="tl-title">Vulnerability Assessment & Penetration Testing (VAPT) Intern</h3>
+                                <p class="tl-org">Splen Technologies and Education Pvt. Ltd. · Chandigarh, India</p>
                             </div>
-
-                            <span class="tl-date">2026 — Present</span>
-
+                            <span class="tl-date">Jun 2026</span>
                         </div>
-
-                        <p class="tl-desc">Leading startup outreach pipelines, mentoring student entrepreneurs, and
-
-                            building local incubation frameworks to accelerate the Punjab startup ecosystem.</p>
-
-                        <div class="tl-tags"><span>Leadership</span><span>Mentoring</span><span>Startup Ecosystem</span>
-
-                        </div>
-
+                        <p class="tl-desc">Conducted vulnerability testing using Burp Suite, Nmap, Nessus, and OWASP ZAP. Performed scanning, enumeration, and security assessments. Identified OWASP Top 10 vulnerabilities, analyzed risks, and prepared reports with actionable remediation and retesting recommendations.</p>
+                        <div class="tl-tags"><span>VAPT</span><span>Burp Suite</span><span>Nmap</span><span>OWASP Top 10</span><span>Nessus</span></div>
                     </div>
-
                 </div>
 
-
-
-                <div class="timeline-item reveal" id="tl-2">
-
-                    <div class="tl-dot"><i class="bi bi-cpu"></i></div>
-
+                <!-- Role 2: Full Stack Developer (Virtual) -->
+                <div class="timeline-item reveal" id="tl-saiket">
+                    <div class="tl-dot"><i class="bi bi-code-slash"></i></div>
                     <div class="tl-content">
-
                         <div class="tl-header">
-
                             <div>
-
-                                <h3 class="tl-title">Robotics Instructor</h3>
-
-                                <p class="tl-org">Technowskola & Roboticshala · Punjab, India</p>
-
+                                <h3 class="tl-title">Full Stack Developer (Virtual Internship)</h3>
+                                <p class="tl-org">SaiKet Systems · India</p>
                             </div>
-
-                            <span class="tl-date">2025 — 2026</span>
-
+                            <span class="tl-date">Jun 2026</span>
                         </div>
-
-                        <p class="tl-desc">Designed and delivered hands-on robotics curriculum covering embedded C++,
-
-                            sensor interfacing, and microcontroller programming. Coached student teams for competitive
-
-                            hackathons.</p>
-
-                        <div class="tl-tags">
-
-                            <span>Robotics</span><span>Teaching</span><span>C++</span><span>Arduino</span>
-                        </div>
-
+                        <p class="tl-desc">Developed responsive full-stack web applications using modern JavaScript technologies. Designed front-end interfaces and backend functionality for scalable applications. Integrated REST APIs and databases while ensuring application performance and participating in deployment activities.</p>
+                        <div class="tl-tags"><span>Full Stack</span><span>JavaScript</span><span>REST APIs</span><span>Web Dev</span></div>
                     </div>
-
                 </div>
 
-
-
-                <div class="timeline-item reveal" id="tl-3">
-
+                <!-- Role 3: Robotics Trainer -->
+                <div class="timeline-item reveal" id="tl-techno">
                     <div class="tl-dot"><i class="bi bi-robot"></i></div>
-
                     <div class="tl-content">
-
                         <div class="tl-header">
-
                             <div>
+                                <h3 class="tl-title">Robotics Trainer</h3>
+                                <p class="tl-org">Technowskola · Punjab, India</p>
+                            </div>
+                            <span class="tl-date">Oct 2025 – Apr 2026</span>
+                        </div>
+                        <p class="tl-desc">Delivered practical robotics and embedded systems training to school and engineering students, <strong>training 1,200+ students</strong>. Conducted workshops on Arduino, sensors, embedded systems, and IoT. Guided students in designing and building <strong>300+ student projects</strong>, mentored teams for competitions, and conducted sessions on 3D printing and rapid prototyping.</p>
+                        <div class="tl-tags"><span>Robotics Trainer</span><span>Arduino</span><span>IoT</span><span>1200+ Students</span><span>3D Printing</span></div>
+                    </div>
+                </div>
 
+                <!-- Role 4: Robotics Instructor -->
+                <div class="timeline-item reveal" id="tl-roboticshala">
+                    <div class="tl-dot"><i class="bi bi-person-video3"></i></div>
+                    <div class="tl-content">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-title">Robotics Instructor</h3>
+                                <p class="tl-org">Roboticshala (Remote) · Punjab, India</p>
+                            </div>
+                            <span class="tl-date">Aug 2025 – Oct 2025</span>
+                        </div>
+                        <p class="tl-desc">Delivered online robotics and embedded systems training. Guided students in automation and robotics programming. Conducted practical demonstrations using Arduino and robotics kits, supporting students in project development and hackathons.</p>
+                        <div class="tl-tags"><span>Online Instruction</span><span>Embedded Systems</span><span>Automation</span><span>Hackathons</span></div>
+                    </div>
+                </div>
+
+                <!-- Role 5: AI & Robotics Engineering Intern -->
+                <div class="timeline-item reveal" id="tl-winnovation-ai">
+                    <div class="tl-dot"><i class="bi bi-cpu-fill"></i></div>
+                    <div class="tl-content">
+                        <div class="tl-header">
+                            <div>
                                 <h3 class="tl-title">AI & Robotics Engineering Intern</h3>
-
-                                <p class="tl-org">WinnoVation Education Services · Punjab, India</p>
-
+                                <p class="tl-org">WinnoVation Education Services Pvt. Ltd. · Punjab, India</p>
                             </div>
-
-                            <span class="tl-date">Jun — Aug 2025</span>
-
+                            <span class="tl-date">Jun 2025 – Aug 2025</span>
                         </div>
-
-                        <p class="tl-desc">Developed computer vision models and autonomous pathfinding algorithms.
-
-                            Optimised hardware-software integration through sensor calibration and telemetry testing.
-
-                        </p>
-
-                        <div class="tl-tags"><span>AI</span><span>Computer
-
-                                Vision</span><span>Robotics</span><span>Internship</span></div>
-
+                        <p class="tl-desc">Developed AI-powered robotic systems integrating hardware and software. Built automation projects using Arduino, sensors, and embedded technologies. Assisted in designing 3D-printed robotic components for prototype development, computer vision, and autonomous robotic navigation.</p>
+                        <div class="tl-tags"><span>AI Robotics</span><span>Computer Vision</span><span>Embedded C++</span><span>3D Prototyping</span></div>
                     </div>
-
                 </div>
 
+                <!-- Role 6: Student Convenor IIC -->
+                <div class="timeline-item reveal" id="tl-iic">
+                    <div class="tl-dot"><i class="bi bi-diagram-3-fill"></i></div>
+                    <div class="tl-content">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-title">Student Convenor</h3>
+                                <p class="tl-org">Institution's Innovation Council (Engineering Department)</p>
+                            </div>
+                            <span class="tl-date">Aug 2025 – Jun 2026</span>
+                        </div>
+                        <p class="tl-desc">Led engineering student coordinators across technical and non-technical domains. Organized innovation challenges, hackathons, robotics workshops, and technical events including Vision Tech Fest and Code Elite. Coordinated communication between faculty mentors and student teams.</p>
+                        <div class="tl-tags"><span>Convenor</span><span>Hackathons</span><span>Leadership</span><span>Tech Fests</span></div>
+                    </div>
+                </div>
 
+                <!-- Role 7: Campus Ambassador -->
+                <div class="timeline-item reveal" id="tl-impunjab">
+                    <div class="tl-dot"><i class="bi bi-flag-fill"></i></div>
+                    <div class="tl-content">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-title">Campus Ambassador</h3>
+                                <p class="tl-org">Innovation Mission Punjab · Punjab, India</p>
+                            </div>
+                            <span class="tl-date">Feb 2025 – Aug 2025</span>
+                        </div>
+                        <p class="tl-desc">Organized entrepreneurship and technology events for 100+ students. Promoted innovation and startup culture on campus, and built professional relationships with industry experts and entrepreneurs.</p>
+                        <div class="tl-tags"><span>Campus Ambassador</span><span>Entrepreneurship</span><span>Startup Ecosystem</span></div>
+                    </div>
+                </div>
 
-                <div class="timeline-item reveal" id="tl-4">
-
+                <!-- Role 8: Cyber Security Intern -->
+                <div class="timeline-item reveal" id="tl-winnovation-sec">
                     <div class="tl-dot"><i class="bi bi-shield-check"></i></div>
-
                     <div class="tl-content">
-
                         <div class="tl-header">
-
                             <div>
-
-                                <h3 class="tl-title">Cybersecurity Research Intern</h3>
-
-                                <p class="tl-org">WinnoVation Education Services · Punjab, India</p>
-
+                                <h3 class="tl-title">Cyber Security Intern</h3>
+                                <p class="tl-org">WinnoVation Education Services Pvt. Ltd. · Punjab, India</p>
                             </div>
-
-                            <span class="tl-date">Jun — Aug 2024</span>
-
+                            <span class="tl-date">Jun 2024 – Jul 2024</span>
                         </div>
-
-                        <p class="tl-desc">Audited live server environments for threat vectors, evaluated secure
-
-                            protocol compliance, and implemented vulnerability isolation procedures to reinforce data
-
-                            protection architecture.</p>
-
-                        <div class="tl-tags"><span>Cyber Security</span><span>Penetration
-
-                                Testing</span><span>Research</span></div>
-
+                        <p class="tl-desc">Conducted vulnerability assessments of websites, servers, and applications. Worked with encryption, network security, and cybersecurity tools, identifying security risks and documenting comprehensive mitigation strategies.</p>
+                        <div class="tl-tags"><span>Cyber Security</span><span>Vulnerability Assessment</span><span>Network Security</span></div>
                     </div>
-
                 </div>
-
-
-
-                <div class="timeline-item reveal" id="tl-5">
-
-                    <div class="tl-dot"><i class="bi bi-lightbulb"></i></div>
-
-                    <div class="tl-content">
-
-                        <div class="tl-header">
-
-                            <div>
-
-                                <h3 class="tl-title">IIC Convenor — Innovation Council</h3>
-
-                                <p class="tl-org">Desh Bhagat University · Punjab, India</p>
-
-                            </div>
-
-                            <span class="tl-date">2023 — 2027</span>
-
-                        </div>
-
-                        <p class="tl-desc">Organising technology workshops, hackathons, and cross-disciplinary research
-
-                            initiatives under the Government's Innovation Council framework. B.Tech CSE specialising in
-
-                            Cyber Forensics & Cybersecurity.</p>
-
-                        <div class="tl-tags"><span>Leadership</span><span>Innovation</span><span>B.Tech CSE</span></div>
-
-                    </div>
-
-                </div>
-
             </div>
-
         </div>
-
     </section>
 
-
-
-
-    <section id="github">
-
+    <!-- EDUCATION & ACHIEVEMENTS SECTION -->
+    <section id="education">
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">005 — GitHub Dashboard</p>
-
-                <h2 class="section-title">Code in <em>motion.</em></h2>
-
+                <p class="section-tag">005 — Education & Honors</p>
+                <h2 class="section-title">Academic & <em>competitive milestones.</em></h2>
             </div>
 
-            <div class="github-dashboard reveal">
-
-                <div class="github-profile-card">
-
-                    <div class="gh-avatar-wrap">
-
-                        <img id="gh-avatar" src="profile.png" alt="GitHub Avatar">
-
-                        <div class="gh-avatar-ring"></div>
-
-                    </div>
-
-                    <div class="gh-info">
-
-                        <h3 id="gh-name">Luxman Kumar</h3>
-
-                        <p id="gh-bio" class="gh-bio">@mraadrsh45 · Cyber Security & AI Developer</p>
-
-                        <a href="https://github.com/mraadrsh45" target="_blank" class="gh-link">
-
-                            <i class="bi bi-github"></i> View Profile
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="github-stats-grid">
-
-                    <div class="gh-stat-card">
-
-                        <i class="bi bi-journal-code"></i>
-
-                        <span class="gh-stat-num" id="gh-repos">—</span>
-
-                        <span class="gh-stat-label">Repositories</span>
-
-                    </div>
-
-                    <div class="gh-stat-card">
-
-                        <i class="bi bi-people"></i>
-
-                        <span class="gh-stat-num" id="gh-followers">—</span>
-
-                        <span class="gh-stat-label">Followers</span>
-
-                    </div>
-
-                    <div class="gh-stat-card">
-
-                        <i class="bi bi-person-plus"></i>
-
-                        <span class="gh-stat-num" id="gh-following">—</span>
-
-                        <span class="gh-stat-label">Following</span>
-
-                    </div>
-
-                    <div class="gh-stat-card">
-
-                        <i class="bi bi-star"></i>
-
-                        <span class="gh-stat-num" id="gh-stars">—</span>
-
-                        <span class="gh-stat-label">Total Stars</span>
-
-                    </div>
-
-                </div>
-
-                <div class="github-contrib-section">
-
-                    <h4>Contribution Graph</h4>
-
-                    <div class="contrib-graph" id="contrib-graph">
-
-                        <!-- Generated by JS -->
-
-                    </div>
-
-                    <div class="contrib-legend">
-
-                        <span>Less</span>
-
-                        <div class="legend-boxes">
-
-                            <div class="leg-box l0"></div>
-
-                            <div class="leg-box l1"></div>
-
-                            <div class="leg-box l2"></div>
-
-                            <div class="leg-box l3"></div>
-
-                            <div class="leg-box l4"></div>
-
+            <div class="edu-achieve-grid reveal">
+                <!-- Education Card -->
+                <div class="ea-card">
+                    <div class="ea-header">
+                        <div class="ea-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <div>
+                            <h3 class="ea-title">Education</h3>
+                            <p class="ea-subtitle">Academic Credentials</p>
                         </div>
-
-                        <span>More</span>
-
                     </div>
-
+                    <div class="ea-body">
+                        <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
+                        <div class="edu-specialization">Computer Science Engineering — Specialization: Cyber Forensics & Security</div>
+                        <div class="edu-institute">
+                            <span>Desh Bhagat University</span>
+                            <span class="edu-year">2023 – 2027</span>
+                        </div>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                            <div style="font-weight: 600; color: #fff; margin-bottom: 0.5rem;"><i class="bi bi-translate text-primary"></i> Languages:</div>
+                            <div class="skill-pill-list">
+                                <span class="skill-pill">English</span>
+                                <span class="skill-pill">Hindi</span>
+                                <span class="skill-pill">Punjabi</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 0.8rem;">
+                            <div style="font-weight: 600; color: #fff; margin-bottom: 0.5rem;"><i class="bi bi-compass text-primary"></i> Areas of Interest:</div>
+                            <div class="skill-pill-list">
+                                <span class="skill-pill">Full Stack Dev</span>
+                                <span class="skill-pill">AI & Computer Vision</span>
+                                <span class="skill-pill">Robotics & IoT</span>
+                                <span class="skill-pill">Cloud & DevOps</span>
+                                <span class="skill-pill">STEM Education</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="github-langs-section">
-
-                    <h4>Top Languages</h4>
-
-                    <div class="langs-chart" id="langs-chart">
-
-                        <!-- Generated by JS -->
-
+                <!-- Hackathons & Achievements Card -->
+                <div class="ea-card">
+                    <div class="ea-header">
+                        <div class="ea-icon"><i class="bi bi-trophy-fill"></i></div>
+                        <div>
+                            <h3 class="ea-title">Hackathons & Achievements</h3>
+                            <p class="ea-subtitle">Recognitions & Leadership Honors</p>
+                        </div>
                     </div>
-
-                </div>
-
-                <div class="github-repos-section">
-
-                    <h4>Recent Repositories</h4>
-
-                    <div class="repos-list" id="repos-list">
-
-                        <div class="repo-loading">Fetching repositories...</div>
-
+                    <div class="ea-body">
+                        <ul class="achieve-list">
+                            <li><i class="bi bi-check2-circle"></i> <span><strong>1.5+ Years</strong> of practical experience in AI, robotics, and software engineering.</span></li>
+                            <li><i class="bi bi-trophy"></i> <span>Participated in <strong>5+ national-level hackathons</strong>; secured top positions in multiple competitions.</span></li>
+                            <li><i class="bi bi-award-fill"></i> <span>Achieved <strong>2nd Rank</strong> in a university hackathon at Desh Bhagat University.</span></li>
+                            <li><i class="bi bi-star-fill"></i> <span><strong>Top 5 Rank Holder</strong> in technical competitions across CGC Jhanjeri, PTC College, Desh Bhagat University, CT University, and Panjab University.</span></li>
+                            <li><i class="bi bi-calendar-event"></i> <span>Organized <strong>Vision Tech Fest 2025</strong> and <strong>Code Elite Hackathon</strong> as Convenor.</span></li>
+                            <li><i class="bi bi-rocket-takeoff"></i> <span>Organized <strong>Path Finder 3.0 2026</strong> and Code Elite Hackathon as Convenor.</span></li>
+                            <li><i class="bi bi-people-fill"></i> <span>Mentored robotics and software project teams for technical competitions and innovation challenges.</span></li>
+                        </ul>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
+    <!-- CERTIFICATES SECTION -->
     <section id="certificates">
-
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
                 <p class="section-tag">006 — Certifications</p>
-
-                <h2 class="section-title">Credentials & <em>achievements.</em></h2>
-
+                <h2 class="section-title">Verified credentials & <em>certifications.</em></h2>
             </div>
 
             <div class="cert-filter reveal">
-
                 <button class="cert-btn active" data-filter="all">All</button>
-
+                <button class="cert-btn" data-filter="ai">AI & Cloud</button>
                 <button class="cert-btn" data-filter="security">Cyber Security</button>
-
-                <button class="cert-btn" data-filter="ai">AI / ML</button>
-
-                <button class="cert-btn" data-filter="web">Web Dev</button>
-
-                <button class="cert-btn" data-filter="leadership">Leadership</button>
-
-                <button class="cert-btn" data-filter="internship">Internship</button>
-
+                <button class="cert-btn" data-filter="software">Web & Software</button>
+                <button class="cert-btn" data-filter="simulation">Job Simulations</button>
             </div>
 
             <div class="certs-gallery" id="certs-gallery">
-
-                <div class="cert-card reveal" data-cat="security internship">
-
+                <!-- Cert 1: Microsoft Azure CV -->
+                <div class="cert-card reveal" data-cat="ai software">
                     <div class="cert-card-inner">
+                        <div class="cert-icon-wrap"><i class="bi bi-cloud-check-fill"></i></div>
+                        <div class="cert-info">
+                            <h4>Build a Computer Vision App with Azure Cognitive Services</h4>
+                            <p class="cert-issuer-name">Microsoft</p>
+                            <p class="cert-year">Jun 2026</p>
+                        </div>
+                        <span class="cert-badge">Verified</span>
+                    </div>
+                </div>
 
+                <!-- Cert 2: Tata GenAI -->
+                <div class="cert-card reveal" data-cat="ai simulation">
+                    <div class="cert-card-inner">
+                        <div class="cert-icon-wrap"><i class="bi bi-stars"></i></div>
+                        <div class="cert-info">
+                            <h4>GenAI Powered Data Analytics Job Simulation</h4>
+                            <p class="cert-issuer-name">Tata — Forage</p>
+                            <p class="cert-year">Jun 2026</p>
+                        </div>
+                        <span class="cert-badge">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Cert 3: Deloitte Cyber -->
+                <div class="cert-card reveal" data-cat="security simulation">
+                    <div class="cert-card-inner">
                         <div class="cert-icon-wrap"><i class="bi bi-shield-fill-check"></i></div>
-
                         <div class="cert-info">
-
-                            <h4>Cyber Security Internship</h4>
-
-                            <p class="cert-issuer-name">WinnoVation Education Services</p>
-
-                            <p class="cert-year">2024</p>
-
+                            <h4>Cyber Job Simulation</h4>
+                            <p class="cert-issuer-name">Deloitte Australia — Forage</p>
+                            <p class="cert-year">Jul 2025</p>
                         </div>
-
                         <span class="cert-badge">Verified</span>
-
                     </div>
-
                 </div>
 
-                <div class="cert-card reveal" data-cat="ai internship">
-
+                <!-- Cert 4: AI Tools Workshop -->
+                <div class="cert-card reveal" data-cat="ai">
                     <div class="cert-card-inner">
-
                         <div class="cert-icon-wrap"><i class="bi bi-robot"></i></div>
-
                         <div class="cert-info">
-
-                            <h4>AI & Robotics Engineering</h4>
-
-                            <p class="cert-issuer-name">WinnoVation Education Services</p>
-
-                            <p class="cert-year">2025</p>
-
+                            <h4>AI Tools Workshop</h4>
+                            <p class="cert-issuer-name">Be10x</p>
+                            <p class="cert-year">Jul 2025</p>
                         </div>
-
                         <span class="cert-badge">Verified</span>
-
                     </div>
-
                 </div>
 
-                <div class="cert-card reveal" data-cat="leadership">
-
+                <!-- Cert 5: SQL Syntax Coursera -->
+                <div class="cert-card reveal" data-cat="software">
                     <div class="cert-card-inner">
-
-                        <div class="cert-icon-wrap"><i class="bi bi-flag-fill"></i></div>
-
+                        <div class="cert-icon-wrap"><i class="bi bi-database-check"></i></div>
                         <div class="cert-info">
-
-                            <h4>Campus Ambassador</h4>
-
-                            <p class="cert-issuer-name">Innovation Mission Punjab</p>
-
-                            <p class="cert-year">2026</p>
-
-                        </div>
-
-                        <span class="cert-badge">Active</span>
-
-                    </div>
-
-                </div>
-
-                <div class="cert-card reveal" data-cat="ai web">
-
-                    <div class="cert-card-inner">
-
-                        <div class="cert-icon-wrap"><i class="bi bi-award"></i></div>
-
-                        <div class="cert-info">
-
-                            <h4>Software Engineering & AI/ML</h4>
-
+                            <h4>Understanding Basic SQL Syntax</h4>
                             <p class="cert-issuer-name">Coursera</p>
-
-                            <p class="cert-year">2024</p>
-
+                            <p class="cert-year">Jan 2024</p>
                         </div>
-
                         <span class="cert-badge">Verified</span>
-
                     </div>
-
                 </div>
 
-                <div class="cert-card reveal" data-cat="web">
-
+                <!-- Cert 6: Winnovation -->
+                <div class="cert-card reveal" data-cat="security simulation">
                     <div class="cert-card-inner">
-
-                        <div class="cert-icon-wrap"><i class="bi bi-code-slash"></i></div>
-
+                        <div class="cert-icon-wrap"><i class="bi bi-patch-check-fill"></i></div>
                         <div class="cert-info">
-
-                            <h4>HTML5 & JavaScript</h4>
-
-                            <p class="cert-issuer-name">Coursera</p>
-
+                            <h4>Cyber Security & Robotics Certificate</h4>
+                            <p class="cert-issuer-name">WinnoVation Education Services Pvt. Ltd.</p>
                             <p class="cert-year">2024</p>
-
                         </div>
-
                         <span class="cert-badge">Verified</span>
-
                     </div>
-
                 </div>
 
-                <div class="cert-card reveal" data-cat="security ai">
-
+                <!-- Cert 7: Android Development -->
+                <div class="cert-card reveal" data-cat="software">
                     <div class="cert-card-inner">
-
-                        <div class="cert-icon-wrap"><i class="bi bi-mortarboard"></i></div>
-
-                        <div class="cert-info">
-
-                            <h4>Data Analytics & Ethical Hacking</h4>
-
-                            <p class="cert-issuer-name">Eduskills Foundation</p>
-
-                            <p class="cert-year">2024</p>
-
-                        </div>
-
-                        <span class="cert-badge">Verified</span>
-
-                    </div>
-
-                </div>
-
-                <div class="cert-card reveal" data-cat="leadership">
-
-                    <div class="cert-card-inner">
-
-                        <div class="cert-icon-wrap"><i class="bi bi-people-fill"></i></div>
-
-                        <div class="cert-info">
-
-                            <h4>Advanced Soft Skills Development</h4>
-
-                            <p class="cert-issuer-name">Swayam — Government of India</p>
-
-                            <p class="cert-year">2024</p>
-
-                        </div>
-
-                        <span class="cert-badge">Verified</span>
-
-                    </div>
-
-                </div>
-
-                <div class="cert-card reveal" data-cat="ai web internship">
-
-                    <div class="cert-card-inner">
-
                         <div class="cert-icon-wrap"><i class="bi bi-phone"></i></div>
-
                         <div class="cert-info">
-
                             <h4>Android Development</h4>
-
                             <p class="cert-issuer-name">Eduskills Foundation</p>
-
-                            <p class="cert-year">2024</p>
-
+                            <p class="cert-year">Certified</p>
                         </div>
-
                         <span class="cert-badge">Verified</span>
-
                     </div>
-
                 </div>
 
+                <!-- Cert 8: Ethical Hacking -->
+                <div class="cert-card reveal" data-cat="security">
+                    <div class="cert-card-inner">
+                        <div class="cert-icon-wrap"><i class="bi bi-shield-slash-fill"></i></div>
+                        <div class="cert-info">
+                            <h4>Ethical Hacking (English Language)</h4>
+                            <p class="cert-issuer-name">Eduskills Foundation</p>
+                            <p class="cert-year">Certified</p>
+                        </div>
+                        <span class="cert-badge">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Cert 9: React Native -->
+                <div class="cert-card reveal" data-cat="software">
+                    <div class="cert-card-inner">
+                        <div class="cert-icon-wrap"><i class="bi bi-app-indicator"></i></div>
+                        <div class="cert-info">
+                            <h4>Mobile App Development with React Native</h4>
+                            <p class="cert-issuer-name">Eduskills Foundation</p>
+                            <p class="cert-year">Certified</p>
+                        </div>
+                        <span class="cert-badge">Verified</span>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </section>
 
-
-    <section id="contact">
-
+    <!-- GITHUB DASHBOARD -->
+    <section id="github">
         <div class="section-wrap">
-
             <div class="section-header reveal">
-
-                <p class="section-tag">007 — Contact</p>
-
-                <h2 class="section-title">Let's build something <em>remarkable.</em></h2>
-
+                <p class="section-tag">007 — GitHub Live Activity</p>
+                <h2 class="section-title">Open source in <em>motion.</em></h2>
             </div>
-
-            <div class="contact-layout">
-
-                <!-- Contact Info -->
-
-                <div class="contact-info reveal">
-
-                    <p class="contact-intro">I'm always open to new opportunities, collaborations, and interesting
-
-                        conversations. Whether you have a project idea, internship offer, or just want to connect —
-
-                        reach out!</p>
-
-                    <div class="contact-links">
-
-                        <a href="mailto:luxmankumar628@gmail.com" class="contact-link" id="c-email">
-
-                            <div class="cl-icon"><i class="bi bi-envelope"></i></div>
-
-                            <div>
-
-                                <span class="cl-label">Email</span>
-
-                                <span class="cl-value">luxmankumar628@gmail.com</span>
-
-                            </div>
-
-                        </a>
-
-                        <a href="tel:+919780387265" class="contact-link" id="c-phone">
-
-                            <div class="cl-icon"><i class="bi bi-telephone"></i></div>
-
-                            <div>
-
-                                <span class="cl-label">Phone</span>
-
-                                <span class="cl-value">+91 97803 87265</span>
-
-                            </div>
-
-                        </a>
-
-                        <a href="https://linkedin.com/in/luxman-kumar" target="_blank" class="contact-link"
-                            id="c-linkedin">
-
-                            <div class="cl-icon"><i class="bi bi-linkedin"></i></div>
-
-                            <div>
-
-                                <span class="cl-label">LinkedIn</span>
-
-                                <span class="cl-value">linkedin.com/in/luxman-kumar</span>
-
-                            </div>
-
-                        </a>
-
-                        <a href="https://github.com/mraadrsh45" target="_blank" class="contact-link" id="c-github">
-
-                            <div class="cl-icon"><i class="bi bi-github"></i></div>
-
-                            <div>
-
-                                <span class="cl-label">GitHub</span>
-
-                                <span class="cl-value">github.com/mraadrsh45</span>
-
-                            </div>
-
-                        </a>
-
-                        <div class="contact-link" id="c-location">
-
-                            <div class="cl-icon"><i class="bi bi-geo-alt"></i></div>
-
-                            <div>
-
-                                <span class="cl-label">Location</span>
-
-                                <span class="cl-value">Ludhiana, Punjab 141007</span>
-
-                            </div>
-
-                        </div>
-
+            <div class="github-dashboard reveal">
+                <div class="github-profile-card">
+                    <div class="gh-avatar-wrap">
+                        <img id="gh-avatar" src="my photo.png" alt="Luxman Kumar">
+                        <div class="gh-avatar-ring"></div>
                     </div>
-
-                    <a href="luxman2.0.pdf" download class="btn-neon contact-resume-btn">
-
-                        <i class="bi bi-download"></i> Download Resume
-
-                    </a>
-
+                    <div class="gh-info">
+                        <h3 id="gh-name">Luxman Kumar</h3>
+                        <p id="gh-bio" class="gh-bio">@mraadrsh45 · Software Developer & AI/Robotics Engineer</p>
+                        <a href="https://github.com/mraadrsh45" target="_blank" rel="noopener" class="gh-link">
+                            <i class="bi bi-github"></i> View Profile
+                        </a>
+                    </div>
                 </div>
 
+                <div class="github-stats-grid">
+                    <div class="gh-stat-card">
+                        <i class="bi bi-journal-code"></i>
+                        <span class="gh-stat-num" id="gh-repos">—</span>
+                        <span class="gh-stat-label">Repositories</span>
+                    </div>
+                    <div class="gh-stat-card">
+                        <i class="bi bi-people"></i>
+                        <span class="gh-stat-num" id="gh-followers">—</span>
+                        <span class="gh-stat-label">Followers</span>
+                    </div>
+                    <div class="gh-stat-card">
+                        <i class="bi bi-person-plus"></i>
+                        <span class="gh-stat-num" id="gh-following">—</span>
+                        <span class="gh-stat-label">Following</span>
+                    </div>
+                    <div class="gh-stat-card">
+                        <i class="bi bi-star"></i>
+                        <span class="gh-stat-num" id="gh-stars">—</span>
+                        <span class="gh-stat-label">Total Stars</span>
+                    </div>
+                </div>
 
+                <div class="github-contrib-section">
+                    <h4>Contribution Graph</h4>
+                    <div class="contrib-graph" id="contrib-graph"></div>
+                    <div class="contrib-legend">
+                        <span>Less</span>
+                        <div class="legend-boxes">
+                            <div class="leg-box l0"></div>
+                            <div class="leg-box l1"></div>
+                            <div class="leg-box l2"></div>
+                            <div class="leg-box l3"></div>
+                            <div class="leg-box l4"></div>
+                        </div>
+                        <span>More</span>
+                    </div>
+                </div>
 
-                <!-- Contact Form -->
+                <div class="github-langs-section">
+                    <h4>Top Languages</h4>
+                    <div class="langs-chart" id="langs-chart"></div>
+                </div>
+
+                <div class="github-repos-section">
+                    <h4>Recent Repositories</h4>
+                    <div class="repos-list" id="repos-list">
+                        <div class="repo-loading">Fetching repositories...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="section-wrap">
+            <div class="section-header reveal">
+                <p class="section-tag">008 — Get In Touch</p>
+                <h2 class="section-title">Let's build something <em>remarkable.</em></h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info reveal">
+                    <p class="contact-intro">I'm always open to new software development roles, engineering opportunities, and robotics collaborations. Reach out directly or drop a message below!</p>
+                    <div class="contact-links">
+                        <a href="mailto:luxmankumar628@gmail.com" class="contact-link" id="c-email">
+                            <div class="cl-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <span class="cl-label">Email</span>
+                                <span class="cl-value">luxmankumar628@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+919780387265" class="contact-link" id="c-phone">
+                            <div class="cl-icon"><i class="bi bi-telephone"></i></div>
+                            <div>
+                                <span class="cl-label">Phone</span>
+                                <span class="cl-value">+91 9780387265</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/luxman-kumar" target="_blank" rel="noopener" class="contact-link" id="c-linkedin">
+                            <div class="cl-icon"><i class="bi bi-linkedin"></i></div>
+                            <div>
+                                <span class="cl-label">LinkedIn</span>
+                                <span class="cl-value">linkedin.com/in/luxman-kumar</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/mraadrsh45" target="_blank" rel="noopener" class="contact-link" id="c-github">
+                            <div class="cl-icon"><i class="bi bi-github"></i></div>
+                            <div>
+                                <span class="cl-label">GitHub</span>
+                                <span class="cl-value">github.com/mraadrsh45</span>
+                            </div>
+                        </a>
+                        <div class="contact-link" id="c-location">
+                            <div class="cl-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <span class="cl-label">Location</span>
+                                <span class="cl-value">Ludhiana, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#" class="btn-neon btn-view-resume">
+                            <i class="bi bi-eye"></i> View Resume
+                        </a>
+                        <a href="luxman2.0.pdf" download class="btn-glass contact-resume-btn">
+                            <i class="bi bi-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
 
                 <div class="contact-form-wrap reveal">
-
                     <div class="glass-form">
-
                         <div id="contact-success" class="form-success" style="display:none;">
-
                             <i class="bi bi-check-circle-fill"></i>
-
                             <h3>Message Sent!</h3>
-
                             <p>Thank you, <strong id="success-name"></strong>! I'll get back to you shortly.</p>
-
                             <button class="btn-glass" id="btn-reset-form">Send Another</button>
-
                         </div>
-
                         <form id="contact-form" novalidate>
-
                             <div class="form-field" id="field-name">
-
                                 <label>Your Name</label>
-
                                 <input type="text" id="contact-name" placeholder="Name" required>
-
                                 <span class="field-err">Name must be at least 3 characters</span>
-
                             </div>
-
                             <div class="form-field" id="field-email">
-
                                 <label>Email Address</label>
-
                                 <input type="email" id="contact-email" placeholder="name@gmail.com" required>
-
                                 <span class="field-err">Please enter a valid email</span>
-
                             </div>
-
                             <div class="form-field" id="field-subject">
-
                                 <label>Subject</label>
-
-                                <input type="text" id="contact-subject" placeholder="Project Collaboration" required>
-
+                                <input type="text" id="contact-subject" placeholder="Project Collaboration / Job Opportunity" required>
                                 <span class="field-err">Subject must be at least 5 characters</span>
-
                             </div>
-
                             <div class="form-field" id="field-message">
-
                                 <label>Message</label>
-
-                                <textarea id="contact-message" rows="5" placeholder="Tell me about your project..."
-                                    required></textarea>
-
+                                <textarea id="contact-message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
                                 <span class="field-err">Message must be at least 15 characters</span>
-
                             </div>
-
                             <button type="submit" class="btn-neon submit-btn" id="btn-submit">
-
                                 Send Message <i class="bi bi-send"></i>
-
                             </button>
-
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
+    <!-- FOOTER -->
     <footer class="site-footer">
-
         <div class="footer-inner">
-
             <div class="footer-brand">LK<span>.</span></div>
-
-            <p class="footer-copy"> © 2026 Luxman Kumar · Built with precision & passion</p>
-
+            <p class="footer-copy">© 2026 Luxman Kumar · Software Developer & AI/Robotics Engineer</p>
             <div class="footer-socials">
-
-                <a href="https://github.com/mraadrsh45" target="_blank"><i class="bi bi-github"></i></a>
-
-                <a href="https://linkedin.com/in/luxman-kumar" target="_blank"><i class="bi bi-linkedin"></i></a>
-
-                <a href="mailto:luxmankumar628@gmail.com"><i class="bi bi-envelope"></i></a>
-
+                <a href="https://github.com/mraadrsh45" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/luxman-kumar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="mailto:luxmankumar628@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
             </div>
-
         </div>
-
     </footer>
 
+    <!-- INTERACTIVE RESUME MODAL -->
+    <div id="resume-modal" class="resume-modal-overlay">
+        <div class="resume-modal-card">
+            <div class="resume-modal-header">
+                <div class="resume-modal-title">
+                    <i class="bi bi-file-earmark-person text-primary"></i> Luxman Kumar — Official Resume
+                </div>
+                <div class="resume-modal-actions">
+                    <button class="btn-glass" id="btn-print-resume" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;"><i class="bi bi-printer"></i> Print</button>
+                    <a href="luxman2.0.pdf" download class="btn-neon" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;"><i class="bi bi-download"></i> Download PDF</a>
+                    <button class="btn-icon-close" id="btn-close-resume" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+            <div class="resume-modal-body">
+                <div class="resume-preview-sheet">
+                    <!-- Resume Header -->
+                    <div class="res-header-block">
+                        <div class="res-name">LUXMAN KUMAR</div>
+                        <div class="res-role">Software Developer | Full Stack Engineer (MERN) | AI & Robotics</div>
+                        <div class="res-contacts">
+                            <span><i class="bi bi-geo-alt"></i> Ludhiana, India</span>
+                            <span><i class="bi bi-telephone"></i> +91 9780387265</span>
+                            <span><i class="bi bi-envelope"></i> <a href="mailto:luxmankumar628@gmail.com">luxmankumar628@gmail.com</a></span>
+                            <span><i class="bi bi-linkedin"></i> <a href="https://linkedin.com/in/luxman-kumar" target="_blank">linkedin.com/in/luxman-kumar</a></span>
+                            <span><i class="bi bi-github"></i> <a href="https://github.com/mraadrsh45" target="_blank">github.com/mraadrsh45</a></span>
+                        </div>
+                    </div>
 
+                    <!-- Summary -->
+                    <div class="res-section-title">SUMMARY</div>
+                    <p style="font-size: 0.9rem; color: #d1d5db; line-height: 1.55;">
+                        Software Developer with full-stack development experience across the MERN stack, Python/Flask, and Java, combined with 1.5+ years of applied engineering in AI, computer vision, and embedded systems. Has designed and shipped full-stack web applications featuring REST APIs, JWT authentication, third-party AI/security API integrations, and database-backed dashboards, alongside containerized and cloud-deployable services. Strong foundation in data structures, systems programming, and problem solving, built through robotics and automation engineering, plus a track record of mentoring 2000+ learners and delivering 400+ hands-on technical projects.
+                    </p>
 
+                    <!-- Technical Skills -->
+                    <div class="res-section-title">TECHNICAL SKILLS</div>
+                    <div style="font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.35rem; color: #d1d5db;">
+                        <div><strong>• Programming Languages:</strong> Python, Java, C/C++, JavaScript, Kotlin</div>
+                        <div><strong>• Frontend Development:</strong> React.js, HTML5, CSS3, Tailwind CSS, Responsive UI Design</div>
+                        <div><strong>• Backend Development:</strong> Node.js, Express.js, Flask, REST API Design, JWT Authentication</div>
+                        <div><strong>• Databases:</strong> MongoDB, MySQL, PostgreSQL (Supabase), NeonDB, SQLite, Firebase</div>
+                        <div><strong>• Tools & DevOps:</strong> Git, GitHub, Docker, Docker Compose, VS Code, IntelliJ IDEA, Postman-style API testing</div>
+                        <div><strong>• AI & Integrations:</strong> OpenAI API, Computer Vision (OpenCV), Azure Cognitive Services</div>
+                        <div><strong>• Robotics & Embedded Systems:</strong> Arduino UNO/Mega, ESP32/ESP8266, Raspberry Pi, IoT, Sensors & Actuators, 3D Printing & Rapid Prototyping, Fusion 360, SolidWorks (Basic)</div>
+                        <div><strong>• Professional Skills:</strong> Technical Training, Student Mentoring, Workshop Delivery, Leadership & Team Management, Technical Documentation, Problem Solving, Communication</div>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div class="res-section-title">EXPERIENCE</div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Vulnerability Assessment & Penetration Testing (VAPT) Intern</span>
+                            <span>Jun 2026</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Splen Technologies and Education Pvt. Ltd.</span>
+                            <span>Chandigarh, India</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Conducted vulnerability testing using Burp Suite, Nmap, Nessus, and OWASP ZAP.</li>
+                            <li>Performed scanning, enumeration, and security assessments.</li>
+                            <li>Identified OWASP Top 10 vulnerabilities and analyzed risk.</li>
+                            <li>Prepared reports with remediation and retesting recommendations.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Full Stack Developer (Virtual Internship)</span>
+                            <span>Jun 2026</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>SaiKet Systems</span>
+                            <span>India</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Develop responsive full-stack web applications using modern JavaScript technologies.</li>
+                            <li>Design frontend interfaces and back-end functionality for scalable applications.</li>
+                            <li>Integrate REST APIs and databases while ensuring application performance.</li>
+                            <li>Participate in testing, deployment, and maintenance activities.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Robotics Trainer</span>
+                            <span>Oct 2025 – Apr 2026</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Technowskola</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Delivered practical robotics and embedded systems training to school and engineering students, training 1,200+ students.</li>
+                            <li>Conducted workshops on Arduino, sensors, embedded systems, and IoT.</li>
+                            <li>Guided students in designing and building robotics and automation projects, resulting in 300+ student projects.</li>
+                            <li>Mentored teams for robotics competitions and innovation challenges.</li>
+                            <li>Assisted students in debugging hardware and software issues.</li>
+                            <li>Conducted introductory sessions on 3D printing and rapid prototyping.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Robotics Instructor</span>
+                            <span>Aug 2025 – Oct 2025</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Roboticshala (Remote)</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Delivered online robotics and embedded systems training.</li>
+                            <li>Guided students in automation and robotics programming.</li>
+                            <li>Conducted practical demonstrations using Arduino and robotics kits.</li>
+                            <li>Supported students in project development and hackathons.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>AI & Robotics Engineering Intern</span>
+                            <span>Jun 2025 – Aug 2025</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>WinnoVation Education Services Pvt. Ltd.</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Developed AI-powered robotic systems integrating hardware and software.</li>
+                            <li>Built automation projects using Arduino, sensors, and embedded technologies.</li>
+                            <li>Assisted in designing 3D-printed robotic components for prototype development.</li>
+                            <li>Worked on computer vision and autonomous robotic navigation.</li>
+                            <li>Performed testing, troubleshooting, and optimization of robotics systems.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Student Convenor</span>
+                            <span>Aug 2025 – Jun 2026</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Institution's Innovation Council (Engineering Department)</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Led engineering student coordinators across technical and non-technical domains.</li>
+                            <li>Organized innovation challenges, hackathons, robotics workshops, and technical events.</li>
+                            <li>Coordinated communication between faculty mentors and student teams.</li>
+                            <li>Promoted entrepreneurship, innovation, and collaborative learning.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Campus Ambassador</span>
+                            <span>Feb 2025 – Aug 2025</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Innovation Mission Punjab</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Organized entrepreneurship and technology events for 100+ students.</li>
+                            <li>Promoted innovation and startup culture on campus.</li>
+                            <li>Built professional relationships with industry experts and entrepreneurs.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Cyber Security Intern</span>
+                            <span>Jun 2024 – Jul 2024</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>WinnoVation Education Services Pvt. Ltd.</span>
+                            <span>Punjab</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Conducted vulnerability assessments of websites, servers, and applications.</li>
+                            <li>Worked with encryption, network security, and cybersecurity tools.</li>
+                            <li>Identified security risks and documented mitigation strategies.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Software Development Projects -->
+                    <div class="res-section-title">SOFTWARE DEVELOPMENT PROJECTS</div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>FitZone AI — Gym Marketing & Lead Generation Platform</span>
+                            <span style="font-size: 0.8rem; font-weight: normal;"><a href="https://github.com/mraadrsh45/Fitzone" target="_blank">github.com/mraadrsh45/Fitzone</a></span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>React, Node.js, Express, MongoDB, JWT, Tailwind CSS, OpenAI API, Chart.js</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Built a full-stack MERN application for AI-powered gym digital marketing automation with lead capture and management.</li>
+                            <li>Implemented JWT-authenticated REST API with Node.js/Express and MongoDB/Mongoose.</li>
+                            <li>Integrated the OpenAI API to auto-generate marketing captions, hashtags, ad copy, and SEO keywords.</li>
+                            <li>Built an analytics dashboard with Chart.js visualizing leads and membership performance.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>CloudVMX — Containerized Cloud Virtual Machine Platform</span>
+                            <span style="font-size: 0.8rem; font-weight: normal;"><a href="https://github.com/mraadrsh45/CloudVMX" target="_blank">github.com/mraadrsh45/CloudVMX</a></span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Java, Docker, Docker Compose, Shell/PowerShell</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Developed a cloud virtual machine platform with a Dockerized client/backend supporting Windows, Android, and Kali environments.</li>
+                            <li>Wrote automated build and deployment scripts (Docker Compose, shell, PowerShell, batch) for multi-OS container images.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Grocery Inventory & Barcode Scanning Web App</span>
+                            <span style="font-size: 0.8rem; font-weight: normal;"><a href="https://github.com/mraadrsh45/fully-automatic-Barcode-scanner-for-robot" target="_blank">github.com/mraadrsh45/fully-automatic-Barcode-scanner-for-robot</a></span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Python, Flask, OpenCV, pyzbar, SQLAlchemy, SQLite</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Built a Flask web application for real-time barcode scanning via webcam with SQLite-backed inventory management.</li>
+                            <li>Implemented REST endpoints for product lookup, label printing, and inventory statistics.</li>
+                            <li>Used OpenCV and pyzbar for barcode detection, feeding data originally captured for the autonomous grocery-picking robot.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>AI-Security Finance Manager</span>
+                            <span style="font-size: 0.8rem; font-weight: normal;"><a href="https://github.com/adi4sure/AI-Security-Finance" target="_blank">github.com/adi4sure/AI-Security-Finance</a></span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Node.js, Python, VirusTotal API, Nmap, HTML/CSS/JS</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Collaborated on a personal finance dashboard for expense tracking and financial health visualization.</li>
+                            <li>Integrated the VirusTotal API for system file threat scanning and an Nmap-based pattern-matching module for security alerts.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Roomora — Property Listing Website</span>
+                            <span style="font-size: 0.8rem; font-weight: normal;"><a href="https://github.com/mraadrsh45/Roomora-website" target="_blank">github.com/mraadrsh45/Roomora-website</a></span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>React/JavaScript, HTML, CSS</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Built a responsive front-end website with listing pages and mobile-first layout.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Robotics & Embedded Projects -->
+                    <div class="res-section-title">ROBOTICS & EMBEDDED SYSTEMS PROJECTS</div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>AI-Powered Autonomous Grocery Picking Robot</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Arduino Mega, Computer Vision, AI, QR Code Scanner, Conveyor Automation, Stepper/Servo Motors, Sensors</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Designed an autonomous grocery robot for smart retail automation with a conveyor-based mechanism replacing a traditional robotic arm.</li>
+                            <li>Designed lightweight parts suitable for 3D printing and integrated AI-based object identification and QR code recognition.</li>
+                            <li>Implemented obstacle detection and autonomous navigation; optimized performance through sensor calibration and testing.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Smart Line Following Robot</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Arduino, IR Sensor Arrays</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Developed an autonomous robot using IR sensor arrays with calibrated navigation and smooth motor control.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>RFID Smart Door Lock</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Arduino, RFID Reader, Servo Motor, LCD</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Designed an Arduino-based RFID access control system integrating a servo motor, RFID reader, and LCD display.</li>
+                        </ul>
+                    </div>
+
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>IoT Smart Automation Projects</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Arduino/ESP32, Sensors, IoT Protocols</span>
+                        </div>
+                        <ul class="res-bullets">
+                            <li>Smart Parking System, Smart Traffic Light Controller, Smart Home Automation, Ultrasonic Obstacle Detection Robot, and Environmental Monitoring System.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="res-section-title">EDUCATION</div>
+                    <div class="res-item">
+                        <div class="res-item-head">
+                            <span>Desh Bhagat University</span>
+                            <span>2023 – 2027</span>
+                        </div>
+                        <div class="res-item-sub">
+                            <span>Bachelor of Technology (B.Tech), Computer Science Engineering — Specialization: Cyber Forensics & Security</span>
+                        </div>
+                    </div>
+
+                    <!-- Licenses & Certifications -->
+                    <div class="res-section-title">LICENSES & CERTIFICATIONS</div>
+                    <ul class="res-bullets">
+                        <li>AI Tools Workshop — Be10x (Jul 2025)</li>
+                        <li>Understanding Basic SQL Syntax — Coursera (Jan 2024)</li>
+                        <li>Build a Computer Vision App with Azure Cognitive Services — Microsoft (Jun 2026)</li>
+                        <li>Tata — GenAI Powered Data Analytics Job Simulation — Forage (Jun 2026)</li>
+                        <li>Winnovation — Winnovation Education Pvt. Ltd. (Jun 2024 – Jul 2024)</li>
+                        <li>Deloitte Australia — Cyber Job Simulation — Forage (Jul 2025)</li>
+                        <li>Android Development — Eduskill</li>
+                        <li>Ethical Hacking (English Language) — Eduskill</li>
+                        <li>Mobile App Development with React Native — Eduskill</li>
+                    </ul>
+
+                    <!-- Hackathons & Achievements -->
+                    <div class="res-section-title">HACKATHONS & ACHIEVEMENTS</div>
+                    <ul class="res-bullets">
+                        <li>1.5+ years of practical experience in AI, robotics, and software engineering.</li>
+                        <li>Participated in 5+ national-level hackathons; secured top positions in multiple competitions.</li>
+                        <li>Achieved 2nd Rank in a hackathon at Desh Bhagat University.</li>
+                        <li>Top 5 Rank Holder in technical competitions at CGC Jhanjeri, PTC College, Desh Bhagat University, CT University, and Panjab University.</li>
+                        <li>Organized Vision Tech Fest 2025 and Code Elite Hackathon as Convenor.</li>
+                        <li>Organized Path Finder 3.0 2026 and Code Elite Hackathon as Convenor.</li>
+                        <li>Mentored robotics and software project teams for innovation and technical competitions.</li>
+                    </ul>
+
+                    <!-- Additional Information -->
+                    <div class="res-section-title">ADDITIONAL INFORMATION</div>
+                    <ul class="res-bullets">
+                        <li><strong>Languages:</strong> English, Hindi, Punjabi</li>
+                        <li><strong>Areas of Interest:</strong> Full Stack Development, AI, Robotics, Computer Vision, Cloud & DevOps, IoT, STEM Education</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THREE.JS FOR 3D WEBGL ANIMATIONS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
-
 </body>
-
-
 
 </html>

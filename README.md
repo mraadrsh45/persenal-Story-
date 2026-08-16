@@ -1,8 +1,8 @@
-# Premium Developer Portfolio | Luxman Kumar
+# Premium Developer Portfolio & Resume | Luxman Kumar
 
-A state-of-the-art, interactive, and dark-futuristic personal portfolio website built for **Luxman Kumar**, a B.Tech Computer Science Engineering student specializing in **Cyber Security and AI**.
+A state-of-the-art, interactive, and dark-futuristic personal portfolio and resume website built for **Luxman Kumar** — **Software Developer | Full Stack Engineer (MERN) | AI & Robotics**.
 
-This website features modern web design paradigms, including glassmorphism, vibrant neon gradients, smooth micro-animations, custom terminal-inspired interactive widgets, and dynamic API integrations.
+This website features modern web design paradigms, including glassmorphism, vibrant neon gradients, smooth micro-animations, custom terminal-inspired interactive widgets, real-time project filtering, and an interactive on-screen resume viewer.
 
 ---
 
@@ -21,23 +21,21 @@ This website features modern web design paradigms, including glassmorphism, vibr
 
 ### 1. Hero Area (Dynamic Split Screen)
 - **Interactive Portrait**: Glowing rings float around a circular profile photo, shifting perspective according to mouse movement.
-- **Typewriter Console**: Multiline animated typewriter cycles through professional titles.
+- **Typewriter Console**: Multiline animated typewriter cycling through professional titles (`Software Developer`, `Full Stack Engineer (MERN)`, `AI & Robotics Engineer`, `VAPT & Security Specialist`, `Robotics Trainer & Mentor`).
 - **Interactive Particle Background**: Multi-layered canvas-based physics background representing network nodes.
+- **Interactive Resume Modal**: Quick on-screen resume inspection modal with print & PDF download triggers.
 
-### 2. About Me (Interactive Dev Terminal)
+### 2. Executive Summary (Interactive Dev Terminal)
 - Simulated macOS terminal shell styled window.
-- Interactive lines executing Linux-style commands (`whoami`, `cat specialization.txt`, `ls experience/`) revealing professional summary parameters.
+- Interactive lines executing commands revealing professional summary parameters.
 
-### 3. Skills Arsenal & Tech Wall
-- **Grid Layout**: Real technology icons powered by JSdelivr Devicons (no abstract emojis, no flat percentage bars).
-- **Tech Wall**: An infinite-scroll horizontal marquee displaying mastered technologies, pausing gracefully on mouse hover.
+### 3. Comprehensive Skills Arsenal & Tech Wall
+- **Categorized Skills Matrix**: 8 dedicated skill groups covering Programming Languages, Frontend, Backend, Databases, Tools & DevOps, AI & Integrations, Robotics & Embedded, and Professional Leadership.
+- **Tech Wall**: An infinite-scroll horizontal marquee displaying mastered technologies, pausing on mouse hover.
 
 ### 4. Interactive Projects Showcase
-- Features fully detailed mockup blocks:
-  - **AI Grocery Picking Robot**: Includes a custom simulated code terminal block displaying real-time pathfinding logs.
-  - **FitZone AI**: Features multi-tech badges.
-  - **CloudVMX**: Web-based sandboxing simulator layout.
-  - **FraudGuard AI**, **Cyber Security Toolkit**, and **Romora CPU Scheduler**.
+- Categorized filter tabs (`All Projects`, `Full Stack & Web`, `AI & Cloud Systems`, `Robotics & IoT`).
+- Projects include **FitZone AI (MERN & OpenAI)**, **CloudVMX (Docker Multi-OS Virtualization)**, **Grocery Barcode Scanner (Flask & OpenCV)**, **AI-Security Finance Manager**, **Roomora Property Listing**, and **Autonomous Grocery Picking Robot**.
 
 ### 5. GitHub Integration Dashboard
 - Uses standard JavaScript Fetch API to retrieve profile metadata from the GitHub REST API (`mraadrsh45`).

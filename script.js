@@ -7,15 +7,19 @@
 const GITHUB_USERNAME = 'mraadrsh45';
 
 /* ── 1. LOADING SCREEN ───────────────────────────────────────── */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loading-screen');
-        if (loader) loader.classList.add('done');
-        document.body.classList.add('loaded');
-        // Trigger hero animations after load
-        animateHeroText();
-    }, 2000);
-});
+function dismissLoader() {
+    const loader = document.getElementById('loading-screen');
+    if (loader && !loader.classList.contains('done')) {
+        loader.classList.add('done');
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+    }
+    document.body.classList.add('loaded');
+    animateHeroText();
+}
+
+window.addEventListener('load', () => setTimeout(dismissLoader, 300));
+document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 600));
+setTimeout(dismissLoader, 1200); // Safety fallback
 
 /* ── 2. CUSTOM CURSOR ────────────────────────────────────────── */
 const cursor = document.getElementById('cursor');
@@ -227,12 +231,11 @@ function initHeroTilt() {
 /* ── 6. TYPING ANIMATION ─────────────────────────────────────── */
 function initTyping() {
     const phrases = [
-        'Cyber Security Enthusiast',
-        'AI Developer',
-        'Full Stack Developer',
-        'Campus Ambassador',
-        'Innovation Leader',
-        'Robotics Engineer',
+        'Software Developer',
+        'Full Stack Engineer (MERN)',
+        'AI & Robotics Engineer',
+        'VAPT & Security Specialist',
+        'Robotics Trainer & Mentor',
     ];
 
     const el = document.getElementById('typed-text');
@@ -269,7 +272,7 @@ function initTyping() {
     }
 
     // Start after loading screen
-    setTimeout(type, 2400);
+    setTimeout(type, 600);
 }
 
 /* ── 7. HERO NAME ANIMATION ──────────────────────────────────── */
@@ -610,24 +613,100 @@ function initCertFilter() {
     });
 }
 
-/* ── 16. PROJECT CARD TILT ───────────────────────────────────── */
-function initProjectTilt() {
+/* ── 15B. PROJECT FILTER ─────────────────────────────────────── */
+function initProjectFilter() {
+    const btns = document.querySelectorAll('.proj-btn');
     const cards = document.querySelectorAll('.proj-card');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                const cats = card.dataset.cat || '';
+                if (filter === 'all' || cats.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+/* ── 15C. RESUME MODAL HANDLER ───────────────────────────────── */
+function initResumeModal() {
+    const openBtns = document.querySelectorAll('.btn-view-resume');
+    const modal = document.getElementById('resume-modal');
+    const closeBtn = document.getElementById('btn-close-resume');
+    const printBtn = document.getElementById('btn-print-resume');
+
+    if (!modal) return;
+
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+}
+
+/* ── 16. 3D CARD PHYSICS & SPECULAR LIGHTING ─────────────────── */
+function initProjectTilt() {
+    const cards = document.querySelectorAll('.proj-card, .skill-category-card, .ea-card, .cert-card, .terminal-card');
+    
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             if (window.innerWidth < 1024) return;
             const rect = card.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const dx = (e.clientX - cx) / (rect.width / 2);
-            const dy = (e.clientY - cy) / (rect.height / 2);
-            card.style.transform = `translateY(-8px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg)`;
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Set dynamic CSS properties for 3D specular glare
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            const cx = rect.width / 2;
+            const cy = rect.height / 2;
+            const dx = (x - cx) / cx;
+            const dy = (y - cy) / cy;
+            const maxTilt = 7;
+            
+            card.style.transform = `perspective(1000px) translateY(-8px) rotateX(${-dy * maxTilt}deg) rotateY(${dx * maxTilt}deg) scale3d(1.02, 1.02, 1.02)`;
         });
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = '';
+            card.style.removeProperty('--mouse-x');
+            card.style.removeProperty('--mouse-y');
         });
-        card.style.transformStyle = 'preserve-3d';
-        card.style.transition = 'transform 0.2s ease, box-shadow 0.4s ease, border-color 0.4s ease';
     });
 }
 
@@ -776,9 +855,158 @@ function initGlowOnScroll() {
         });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('.tl-content, .gh-stat-card, .cert-card').forEach(el => {
+    document.querySelectorAll('.tl-content, .gh-stat-card, .cert-card, .ea-card').forEach(el => {
         observer.observe(el);
     });
+}
+
+/* ── 23. 3D WEBGL CYBER SCENE (Three.js) ────────────────────────── */
+function init3DScene() {
+    const canvas = document.getElementById('webgl-canvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, hero.offsetWidth / hero.offsetHeight, 0.1, 1000);
+    camera.position.z = 26;
+
+    let renderer;
+    try {
+        renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    } catch (e) {
+        return; // WebGL not supported
+    }
+
+    renderer.setSize(hero.offsetWidth, hero.offsetHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // 1. Central 3D Cyber Polyhedron (Icosahedron in #c2a4ff Lavender)
+    const icosaGeometry = new THREE.IcosahedronGeometry(7.5, 1);
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+        color: 0xc2a4ff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.32,
+    });
+    const icosahedron = new THREE.Mesh(icosaGeometry, wireframeMaterial);
+    scene.add(icosahedron);
+
+    // Glowing vertex points
+    const pointsMaterial = new THREE.PointsMaterial({
+        color: 0xeae5ec,
+        size: 0.35,
+        transparent: true,
+        opacity: 0.9,
+    });
+    const icosaPoints = new THREE.Points(icosaGeometry, pointsMaterial);
+    icosahedron.add(icosaPoints);
+
+    // 2. 3D Orbital Rings (Torus in #c2a4ff & #00e5ff)
+    const torusGeom1 = new THREE.TorusGeometry(10.5, 0.05, 16, 100);
+    const torusMat1 = new THREE.MeshBasicMaterial({
+        color: 0xc2a4ff,
+        transparent: true,
+        opacity: 0.45,
+    });
+    const torus1 = new THREE.Mesh(torusGeom1, torusMat1);
+    torus1.rotation.x = Math.PI / 3;
+    scene.add(torus1);
+
+    const torusGeom2 = new THREE.TorusGeometry(12.5, 0.04, 16, 100);
+    const torusMat2 = new THREE.MeshBasicMaterial({
+        color: 0x00e5ff,
+        transparent: true,
+        opacity: 0.35,
+    });
+    const torus2 = new THREE.Mesh(torusGeom2, torusMat2);
+    torus2.rotation.x = -Math.PI / 4;
+    torus2.rotation.y = Math.PI / 6;
+    scene.add(torus2);
+
+    // 3. 3D Stardust Floating Particles Field (#c2a4ff and #eae5ec)
+    const particleCount = 200;
+    const starGeom = new THREE.BufferGeometry();
+    const starPositions = new Float32Array(particleCount * 3);
+    const starColors = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i += 3) {
+        starPositions[i] = (Math.random() - 0.5) * 60;
+        starPositions[i + 1] = (Math.random() - 0.5) * 40;
+        starPositions[i + 2] = (Math.random() - 0.5) * 30;
+
+        if (Math.random() > 0.5) {
+            starColors[i] = 0.76; starColors[i + 1] = 0.64; starColors[i + 2] = 1.0; // #c2a4ff
+        } else {
+            starColors[i] = 0.92; starColors[i + 1] = 0.90; starColors[i + 2] = 0.93; // #eae5ec
+        }
+    }
+
+    starGeom.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+    starGeom.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+
+    const starMaterial = new THREE.PointsMaterial({
+        size: 0.25,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.75,
+    });
+    const stars = new THREE.Points(starGeom, starMaterial);
+    scene.add(stars);
+
+    // Mouse Parallax Physics
+    let targetX = 0, targetY = 0;
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+
+    window.addEventListener('mousemove', (e) => {
+        targetX = (e.clientX - windowHalfX) * 0.0006;
+        targetY = (e.clientY - windowHalfY) * 0.0006;
+    });
+
+    window.addEventListener('resize', () => {
+        windowHalfX = window.innerWidth / 2;
+        windowHalfY = window.innerHeight / 2;
+        if (!hero) return;
+        camera.aspect = hero.offsetWidth / hero.offsetHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(hero.offsetWidth, hero.offsetHeight);
+    });
+
+    let isHeroVisible = true;
+    const observer = new IntersectionObserver((entries) => {
+        isHeroVisible = entries[0].isIntersecting;
+    }, { threshold: 0.05 });
+    observer.observe(hero);
+
+    // Animation Loop
+    let clock = new THREE.Clock();
+    function animate() {
+        requestAnimationFrame(animate);
+        if (!isHeroVisible) return;
+
+        const elapsedTime = clock.getElapsedTime();
+
+        // Continuous smooth 3D rotation
+        icosahedron.rotation.x += 0.0025;
+        icosahedron.rotation.y += 0.0035;
+
+        torus1.rotation.z += 0.0018;
+        torus2.rotation.z -= 0.0024;
+
+        // Floating wave motion
+        icosahedron.position.y = Math.sin(elapsedTime * 0.7) * 0.7;
+        torus1.position.y = Math.sin(elapsedTime * 0.7 + 0.5) * 0.5;
+        torus2.position.y = Math.sin(elapsedTime * 0.7 + 1.0) * 0.5;
+
+        // Smooth Mouse Parallax Ease
+        scene.rotation.y += (targetX - scene.rotation.y) * 0.05;
+        scene.rotation.x += (targetY - scene.rotation.x) * 0.05;
+
+        renderer.render(scene, camera);
+    }
+    animate();
 }
 
 /* ── INIT ALL ─────────────────────────────────────────────────── */
@@ -789,6 +1017,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initReveal();
     initCounters();
     initCertFilter();
+    initProjectFilter();
+    initResumeModal();
     initProjectTilt();
     initContactForm();
     initSmoothScroll();
@@ -797,6 +1027,9 @@ document.addEventListener('DOMContentLoaded', () => {
     addRandomFloatDelays();
     initGlowOnScroll();
     initTyping();
+
+    // 3D Three.js Scene
+    init3DScene();
 
     // Canvas effects (only on hero)
     if (document.getElementById('particle-canvas')) {
