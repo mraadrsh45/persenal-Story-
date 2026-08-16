@@ -537,17 +537,23 @@ function buildReposList(repos) {
     list.innerHTML = '';
 
     repos.forEach(r => {
-        const div = document.createElement('a');
+        const div = document.createElement('div');
         div.className = 'repo-item';
-        div.href = r.html_url;
-        div.target = '_blank';
-        div.rel = 'noopener';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'space-between';
+        div.style.alignItems = 'center';
+        div.style.flexWrap = 'wrap';
+        div.style.gap = '0.5rem';
+
         div.innerHTML = `
-            <div>
-                <div class="repo-name">${r.name}</div>
-                <div class="repo-desc">${r.description || 'No description'}</div>
+            <div style="flex:1; min-width:200px;">
+                <a href="${r.html_url}" target="_blank" rel="noopener" class="repo-name" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                    <i class="bi bi-journal-code"></i> ${r.name}
+                </a>
+                <div class="repo-desc">${r.description || 'Full-stack & AI/Robotics project by Luxman Kumar'}</div>
             </div>
-            <div class="repo-meta">
+            <div class="repo-meta" style="display:flex; align-items:center; gap:0.6rem;">
+                ${r.homepage ? `<a href="${r.homepage}" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--accent); background:rgba(0,255,136,0.1); padding:2px 8px; border-radius:12px; border:1px solid rgba(0,255,136,0.3); text-decoration:none;"><i class="bi bi-box-arrow-up-right"></i> Live App</a>` : ''}
                 ${r.language ? `<span><i class="bi bi-circle-fill" style="font-size:0.5rem; color:var(--primary)"></i> ${r.language}</span>` : ''}
                 <span><i class="bi bi-star"></i> ${r.stargazers_count}</span>
             </div>
