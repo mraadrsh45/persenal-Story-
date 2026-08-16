@@ -720,8 +720,11 @@ function initProjectTilt() {
 function initContactForm() {
     const form = document.getElementById('contact-form');
     const success = document.getElementById('contact-success');
+    const errorBox = document.getElementById('contact-error');
     const resetBtn = document.getElementById('btn-reset-form');
     const successName = document.getElementById('success-name');
+    const submitBtn = document.getElementById('btn-submit');
+    const fallbackMail = document.getElementById('btn-fallback-mail');
 
     if (!form) return;
 
@@ -750,7 +753,7 @@ function initContactForm() {
         input.addEventListener('blur', () => { if (input.value) validate(); });
     });
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         let allValid = true;
 
@@ -766,13 +769,60 @@ function initContactForm() {
             }
         });
 
-        if (allValid) {
-            const name = document.getElementById('contact-name').value.trim().split(' ')[0];
-            if (successName) successName.textContent = name;
-            form.style.display = 'none';
-            if (success) success.style.display = 'block';
-        } else {
-            shakeButton(document.getElementById('btn-submit'));
+        if (!allValid) {
+            shakeButton(submitBtn);
+            return;
+        }
+
+        const nameVal = document.getElementById('contact-name').value.trim();
+        const emailVal = document.getElementById('contact-email').value.trim();
+        const subjectVal = document.getElementById('contact-subject').value.trim();
+        const messageVal = document.getElementById('contact-message').value.trim();
+
+        // Update button state to loading
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Sending Message...</span> <i class="bi bi-arrow-repeat" style="animation: spin 1s linear infinite; display:inline-block;"></i>`;
+        }
+        if (errorBox) errorBox.style.display = 'none';
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/luxmankumar628@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameVal,
+                    email: emailVal,
+                    _subject: `[Portfolio Contact] ${subjectVal}`,
+                    message: messageVal,
+                    _template: 'table'
+                })
+            });
+
+            if (response.ok) {
+                const firstName = nameVal.split(' ')[0];
+                if (successName) successName.textContent = firstName;
+                form.style.display = 'none';
+                if (success) success.style.display = 'block';
+            } else {
+                throw new Error('Server responded with error');
+            }
+        } catch (err) {
+            console.warn('FormSubmit network error, providing mailto fallback:', err);
+            if (errorBox) {
+                if (fallbackMail) {
+                    fallbackMail.href = `mailto:luxmankumar628@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${encodeURIComponent("Name: " + nameVal + "\nEmail: " + emailVal + "\n\n" + messageVal)}`;
+                }
+                errorBox.style.display = 'block';
+            }
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Send Message</span> <i class="bi bi-send"></i>`;
+            }
         }
     });
 
@@ -782,6 +832,7 @@ function initContactForm() {
             form.style.display = 'flex';
             form.style.flexDirection = 'column';
             if (success) success.style.display = 'none';
+            if (errorBox) errorBox.style.display = 'none';
             Object.values(validators).forEach(({ fieldId }) => {
                 const f = document.getElementById(fieldId);
                 if (f) f.classList.remove('valid', 'invalid');

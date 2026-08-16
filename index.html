@@ -1339,33 +1339,41 @@
                     <div class="glass-form">
                         <div id="contact-success" class="form-success" style="display:none;">
                             <i class="bi bi-check-circle-fill"></i>
-                            <h3>Message Sent!</h3>
-                            <p>Thank you, <strong id="success-name"></strong>! I'll get back to you shortly.</p>
-                            <button class="btn-glass" id="btn-reset-form">Send Another</button>
+                            <h3>Message Sent Directly to Luxman!</h3>
+                            <p>Thank you, <strong id="success-name"></strong>! Your message has been sent to <strong>luxmankumar628@gmail.com</strong>. I'll get back to you shortly.</p>
+                            <button class="btn-glass" id="btn-reset-form" style="margin-top: 1rem;">Send Another Message</button>
                         </div>
-                        <form id="contact-form" novalidate>
+                        <div id="contact-error" class="form-error" style="display:none; text-align:center; padding: 1.5rem; background: rgba(255, 77, 77, 0.1); border: 1px solid rgba(255, 77, 77, 0.3); border-radius: 12px; margin-bottom: 1rem;">
+                            <i class="bi bi-exclamation-triangle-fill" style="color: #ff4d4d; font-size: 2rem;"></i>
+                            <h4 style="color: #ff4d4d; margin: 0.5rem 0;">Unable to send automatically</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">You can send your message directly via email client:</p>
+                            <a id="btn-fallback-mail" href="mailto:luxmankumar628@gmail.com" class="btn-neon" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;"><i class="bi bi-envelope"></i> Send via Email App</a>
+                        </div>
+                        <form id="contact-form" action="https://formsubmit.co/luxmankumar628@gmail.com" method="POST" novalidate>
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
                             <div class="form-field" id="field-name">
                                 <label>Your Name</label>
-                                <input type="text" id="contact-name" placeholder="Name" required>
+                                <input type="text" name="name" id="contact-name" placeholder="Your Full Name" required>
                                 <span class="field-err">Name must be at least 3 characters</span>
                             </div>
                             <div class="form-field" id="field-email">
                                 <label>Email Address</label>
-                                <input type="email" id="contact-email" placeholder="name@gmail.com" required>
-                                <span class="field-err">Please enter a valid email</span>
+                                <input type="email" name="email" id="contact-email" placeholder="youremail@example.com" required>
+                                <span class="field-err">Please enter a valid email address</span>
                             </div>
                             <div class="form-field" id="field-subject">
                                 <label>Subject</label>
-                                <input type="text" id="contact-subject" placeholder="Project Collaboration / Job Opportunity" required>
+                                <input type="text" name="_subject" id="contact-subject" placeholder="Project Collaboration / Job Opportunity" required>
                                 <span class="field-err">Subject must be at least 5 characters</span>
                             </div>
                             <div class="form-field" id="field-message">
                                 <label>Message</label>
-                                <textarea id="contact-message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                                <textarea name="message" id="contact-message" rows="5" placeholder="Tell me about your project, idea, or role..." required></textarea>
                                 <span class="field-err">Message must be at least 15 characters</span>
                             </div>
                             <button type="submit" class="btn-neon submit-btn" id="btn-submit">
-                                Send Message <i class="bi bi-send"></i>
+                                <span>Send Message</span> <i class="bi bi-send"></i>
                             </button>
                         </form>
                     </div>
