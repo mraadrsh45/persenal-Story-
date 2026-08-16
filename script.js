@@ -1066,6 +1066,194 @@ function init3DScene() {
     animate();
 }
 
+/* ── 24. WEB APP COMMAND PALETTE (CTRL+K / CMD+K) ─────────────── */
+function initCommandPalette() {
+    const modal = document.getElementById('cmd-palette-modal');
+    const input = document.getElementById('cmd-search-input');
+    const list = document.getElementById('cmd-results-list');
+    const triggers = document.querySelectorAll('#btn-open-cmd, #dock-cmd-btn');
+
+    if (!modal || !input || !list) return;
+
+    const openPalette = () => {
+        modal.classList.add('active');
+        input.value = '';
+        filterItems('');
+        setTimeout(() => input.focus(), 50);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closePalette = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    triggers.forEach(btn => btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openPalette();
+    }));
+
+    // Keyboard Shortcuts: Ctrl+K / Cmd+K and Escape
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            if (modal.classList.contains('active')) closePalette();
+            else openPalette();
+        }
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closePalette();
+        }
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closePalette();
+    });
+
+    // Filter Items
+    function filterItems(query) {
+        const q = query.toLowerCase().trim();
+        const items = list.querySelectorAll('.cmd-item');
+        let firstVisible = null;
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (!q || text.includes(q)) {
+                item.style.display = 'flex';
+                if (!firstVisible) firstVisible = item;
+            } else {
+                item.style.display = 'none';
+            }
+            item.classList.remove('active');
+        });
+
+        if (firstVisible) firstVisible.classList.add('active');
+    }
+
+    input.addEventListener('input', (e) => filterItems(e.target.value));
+
+    // Keyboard Navigation: ArrowUp / ArrowDown / Enter
+    input.addEventListener('keydown', (e) => {
+        const visibleItems = Array.from(list.querySelectorAll('.cmd-item')).filter(i => i.style.display !== 'none');
+        const activeIdx = visibleItems.findIndex(i => i.classList.contains('active'));
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const nextIdx = (activeIdx + 1) % visibleItems.length;
+            visibleItems.forEach(i => i.classList.remove('active'));
+            if (visibleItems[nextIdx]) {
+                visibleItems[nextIdx].classList.add('active');
+                visibleItems[nextIdx].scrollIntoView({ block: 'nearest' });
+            }
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prevIdx = (activeIdx - 1 + visibleItems.length) % visibleItems.length;
+            visibleItems.forEach(i => i.classList.remove('active'));
+            if (visibleItems[prevIdx]) {
+                visibleItems[prevIdx].classList.add('active');
+                visibleItems[prevIdx].scrollIntoView({ block: 'nearest' });
+            }
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            const current = visibleItems[activeIdx] || visibleItems[0];
+            if (current) executeCmdItem(current);
+        }
+    });
+
+    // Item Click
+    list.addEventListener('click', (e) => {
+        const item = e.target.closest('.cmd-item');
+        if (item) executeCmdItem(item);
+    });
+
+    function executeCmdItem(item) {
+        const action = item.dataset.action;
+        closePalette();
+
+        if (action === 'goto') {
+            const target = document.querySelector(item.dataset.target);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (action === 'resume-modal') {
+            const resumeModal = document.getElementById('resume-modal');
+            if (resumeModal) {
+                resumeModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        } else if (action === 'download-pdf') {
+            const link = document.createElement('a');
+            link.href = 'luxman2.0.pdf';
+            link.download = 'Luxman_Kumar_Resume.pdf';
+            link.click();
+        } else if (action === 'copy-email') {
+            navigator.clipboard.writeText('luxmankumar628@gmail.com');
+            alert('Email copied to clipboard: luxmankumar628@gmail.com');
+        } else if (action === 'open-link') {
+            window.open(item.dataset.url, '_blank', 'noopener');
+        }
+    }
+}
+
+/* ── 25. INTERACTIVE TERMINAL CLI ───────────────────────────────── */
+function initInteractiveCLI() {
+    const input = document.getElementById('term-cli-input');
+    const history = document.getElementById('term-dynamic-history');
+    if (!input || !history) return;
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = input.value.trim().toLowerCase();
+            input.value = '';
+            if (!cmd) return;
+
+            const cmdRow = document.createElement('div');
+            cmdRow.className = 'term-line';
+            cmdRow.innerHTML = `<span class="term-prompt">$</span> ${cmd}`;
+            history.appendChild(cmdRow);
+
+            const outRow = document.createElement('div');
+            outRow.className = 'term-output-msg';
+
+            switch (cmd) {
+                case 'help':
+                    outRow.innerHTML = `Available commands: <span style="color:var(--border-strong)">skills, projects, experience, contact, resume, whoami, clear, sudo</span>`;
+                    break;
+                case 'whoami':
+                    outRow.innerHTML = `Luxman Kumar — Full Stack Developer (MERN) | AI & Robotics Engineer | VAPT Specialist`;
+                    break;
+                case 'skills':
+                    outRow.innerHTML = `⚡ Python, Java, JavaScript, C++, React.js, Node.js, Express, MongoDB, Docker, OpenCV, Arduino, Flask, Tailwind CSS`;
+                    break;
+                case 'projects':
+                    outRow.innerHTML = `🚀 FitZone AI (React/MERN), Forensix AI (TypeScript), VK Unisex Salon, CloudVMX (Docker), Autonomous Grocery Robot, FuzzyHash Analyzer... (Total: 22 Projects)`;
+                    break;
+                case 'experience':
+                case 'roles':
+                    outRow.innerHTML = `💼 VAPT Intern (Splen Tech), Full Stack Dev (SaiKet), Student Convenor (IIC - Desh Bhagat Univ), Robotics Trainer (Technowskola · 2000+ students)`;
+                    break;
+                case 'contact':
+                    outRow.innerHTML = `✉️ Email: luxmankumar628@gmail.com | Phone: +91 9780387265 | GitHub: github.com/mraadrsh45`;
+                    break;
+                case 'resume':
+                    outRow.innerHTML = `📄 Opening interactive resume sheet...`;
+                    const rModal = document.getElementById('resume-modal');
+                    if (rModal) { rModal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+                    break;
+                case 'clear':
+                    history.innerHTML = '';
+                    return;
+                case 'sudo':
+                    outRow.innerHTML = `<span style="color:#ff6b6b">Access granted: Welcome root developer Luxman Kumar!</span>`;
+                    break;
+                default:
+                    outRow.innerHTML = `<span style="color:#ff6b6b">Command not found: ${cmd}</span>. Type <span style="color:var(--border-strong)">'help'</span> for list of commands.`;
+            }
+
+            history.appendChild(outRow);
+            const termBody = document.getElementById('term-interactive-body');
+            if (termBody) termBody.scrollTop = termBody.scrollHeight;
+        }
+    });
+}
+
 /* ── INIT ALL ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
@@ -1085,10 +1273,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initGlowOnScroll();
     initTyping();
 
-    // 3D Three.js Scene
+    // 3D WebGL Three.js Scene
     init3DScene();
 
-    // Canvas effects (only on hero)
+    // Web App OS Features
+    initCommandPalette();
+    initInteractiveCLI();
+
+    // Canvas effects
     if (document.getElementById('particle-canvas')) {
         initParticles();
         initNetwork();

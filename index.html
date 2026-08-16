@@ -52,13 +52,17 @@
             <li><a href="#education" data-section="education">Education</a></li>
             <li><a href="#certificates" data-section="certificates">Certificates</a></li>
             <li><a href="#github" data-section="github">GitHub</a></li>
-            <li><a href="#contact" data-section="contact">Contact</a></li>
             <li><a href="#" class="btn-view-resume nav-resume" style="background: rgba(0, 229, 255, 0.1); border: 1px solid var(--primary);"><i class="bi bi-eye"></i> View Resume</a></li>
             <li><a href="luxman2.0.pdf" download class="nav-resume"><i class="bi bi-download"></i> PDF</a></li>
         </ul>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 0.6rem;">
+            <button class="cmd-k-trigger" id="btn-open-cmd" title="Open Command Palette (Ctrl+K / Cmd+K)">
+                <i class="bi bi-command"></i> <span class="cmd-k-badge">⌘K</span>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
     <!-- HERO SECTION -->
@@ -202,18 +206,20 @@
                             <div class="term-dot green"></div>
                             <span class="term-title">luxmankumar628@gmail.com:~</span>
                         </div>
-                        <div class="terminal-body">
+                        <div class="terminal-body" id="term-interactive-body">
                             <div class="term-line"><span class="term-prompt">$</span> whoami</div>
                             <div class="term-output">Luxman Kumar — Software Developer & AI/Robotics Engineer</div>
                             <div class="term-line"><span class="term-prompt">$</span> cat specialization.txt</div>
                             <div class="term-output">MERN Stack · Python/Flask/Java · AI & CV · Embedded Systems · VAPT</div>
-                            <div class="term-line"><span class="term-prompt">$</span> ls experience/</div>
-                            <div class="term-output">vapt-intern/ fullstack-dev/ robotics-trainer/ ai-robotics/ iic-convenor/</div>
                             <div class="term-line"><span class="term-prompt">$</span> echo $MENTORSHIP_STATS</div>
                             <div class="term-output accent-green">2,000+ Students Mentored · 400+ Technical Projects</div>
                             <div class="term-line"><span class="term-prompt">$</span> echo $STATUS</div>
                             <div class="term-output accent-green">Open for Opportunities & Collaborations ✓</div>
-                            <div class="term-line"><span class="term-prompt">$</span> <span class="blink-cursor">_</span></div>
+                            <div id="term-dynamic-history"></div>
+                            <div class="term-input-row" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span class="term-prompt" style="color: var(--primary); font-weight: 700;">$</span>
+                                <input type="text" id="term-cli-input" placeholder="type 'help', 'skills', 'projects', 'contact'..." autocomplete="off" spellcheck="false" style="background: transparent; border: none; outline: none; color: #fff; font-family: var(--font-mono); font-size: 0.88rem; width: 100%;">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1959,6 +1965,53 @@
                         <li><strong>Areas of Interest:</strong> Full Stack Development, AI, Robotics, Computer Vision, Cloud & DevOps, IoT, STEM Education</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING APP DOCK (MAC OS / DYNAMIC ISLAND STYLE) -->
+    <div id="floating-app-dock" class="app-dock">
+        <a href="#hero" class="dock-item" data-tooltip="Home (Top)"><i class="bi bi-house"></i></a>
+        <a href="#skills" class="dock-item" data-tooltip="Skills Arsenal"><i class="bi bi-cpu"></i></a>
+        <a href="#projects" class="dock-item" data-tooltip="Projects (22)"><i class="bi bi-kanban"></i></a>
+        <a href="#experience" class="dock-item" data-tooltip="Experience & Roles"><i class="bi bi-briefcase"></i></a>
+        <button class="dock-item btn-view-resume" data-tooltip="View Resume Modal"><i class="bi bi-file-earmark-person"></i></button>
+        <a href="#contact" class="dock-item" data-tooltip="Contact Luxman"><i class="bi bi-envelope"></i></a>
+        <button class="dock-item dock-cmd-trigger" id="dock-cmd-btn" data-tooltip="Command Palette (⌘K)"><i class="bi bi-command"></i></button>
+    </div>
+
+    <!-- COMMAND PALETTE MODAL (CTRL+K / CMD+K) -->
+    <div id="cmd-palette-modal" class="cmd-modal-overlay">
+        <div class="cmd-modal-card">
+            <div class="cmd-search-bar">
+                <i class="bi bi-search cmd-search-icon"></i>
+                <input type="text" id="cmd-search-input" placeholder="Type a command or search sections, projects, contacts..." autocomplete="off">
+                <span class="cmd-esc-badge">ESC</span>
+            </div>
+            <div class="cmd-results" id="cmd-results-list">
+                <!-- Group: Navigation -->
+                <div class="cmd-group-title">Navigation & Quick Jump</div>
+                <div class="cmd-item active" data-action="goto" data-target="#hero"><i class="bi bi-house"></i> <span>Jump to Home / Hero</span> <span class="cmd-badge">Top</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#skills"><i class="bi bi-cpu"></i> <span>Browse Skills Arsenal</span> <span class="cmd-badge">Skills</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#projects"><i class="bi bi-kanban"></i> <span>Browse All 22 Projects</span> <span class="cmd-badge">Projects</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#experience"><i class="bi bi-briefcase"></i> <span>View Career Experience & Roles</span> <span class="cmd-badge">Timeline</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#education"><i class="bi bi-mortarboard"></i> <span>Education & Hackathons</span> <span class="cmd-badge">DBU</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#certificates"><i class="bi bi-patch-check"></i> <span>Certifications (9 Verified)</span> <span class="cmd-badge">Certs</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#github"><i class="bi bi-github"></i> <span>GitHub Activity & Analytics</span> <span class="cmd-badge">Live API</span></div>
+                <div class="cmd-item" data-action="goto" data-target="#contact"><i class="bi bi-envelope"></i> <span>Send Email to Luxman</span> <span class="cmd-badge">Contact</span></div>
+
+                <!-- Group: Quick Actions -->
+                <div class="cmd-group-title">Quick Actions</div>
+                <div class="cmd-item" data-action="resume-modal"><i class="bi bi-file-earmark-person"></i> <span>Open Interactive Resume Modal</span> <span class="cmd-badge">Preview</span></div>
+                <div class="cmd-item" data-action="download-pdf"><i class="bi bi-download"></i> <span>Download Resume PDF (luxman2.0.pdf)</span> <span class="cmd-badge">PDF</span></div>
+                <div class="cmd-item" data-action="copy-email"><i class="bi bi-clipboard"></i> <span>Copy Email: luxmankumar628@gmail.com</span> <span class="cmd-badge">Copy</span></div>
+                <div class="cmd-item" data-action="open-link" data-url="https://github.com/mraadrsh45"><i class="bi bi-github"></i> <span>Visit GitHub Profile (@mraadrsh45)</span> <span class="cmd-badge">External</span></div>
+                <div class="cmd-item" data-action="open-link" data-url="https://linkedin.com/in/luxman-kumar"><i class="bi bi-linkedin"></i> <span>Connect on LinkedIn</span> <span class="cmd-badge">External</span></div>
+            </div>
+            <div class="cmd-footer">
+                <span>Navigate <kbd>↑</kbd> <kbd>↓</kbd></span>
+                <span>Select <kbd>↵</kbd></span>
+                <span>Close <kbd>ESC</kbd></span>
             </div>
         </div>
     </div>
